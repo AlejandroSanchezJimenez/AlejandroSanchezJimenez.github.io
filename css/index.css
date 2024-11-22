@@ -1,0 +1,104 @@
+body {
+    background-color: #011441;
+    color: #FFFFFF; 
+}
+
+#cursor {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 150, 255, 0.5); /* Color azul claro con transparencia */
+    box-shadow: 0 0 150px 150px rgba(0, 150, 255, 0.3); /* Efecto de aura */
+    pointer-events: none; /* Hace que el div no interfiera con los clics */
+    transition: transform 0.05s ease-out; /* Animación suave */
+    mix-blend-mode: lighten; /* Opcional: Fusiona mejor con el fondo */
+}
+
+#menu {
+    list-style-type: none;
+    width: 200px; /* Ancho del menú */
+    position: fixed; /* Fija el menú a la izquierda */
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+}
+
+#menu li {
+    margin: 20px 0; /* Espaciado entre los elementos */
+}
+
+#menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px;
+    display: block; /* Hace que el enlace ocupe toda la línea */
+    transition: background-color 0.3s;
+}
+
+#menu a:hover {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    color: white; 
+}
+
+#menu a.active {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    color: white; 
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.section {
+    padding: 5%;
+    font-size: 1rem;
+    color: white;
+    border-bottom: 2px solid #333;
+}
+
+.panel:hover {
+    border-radius: 10px;
+    border-color: gray;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.line {
+    display: inline-block;
+    width: 50px; /* Longitud de la línea */
+    height: 2px; /* Grosor de la línea */
+    background-color: #007bff; /* Color de la línea */
+    margin-top: 10px; /* Espacio encima de la línea */
+}
+
+#social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: inline-flex; /* Hace que los elementos de la lista estén en línea */
+    justify-content: center; /* Centra los elementos en la línea */
+}
+
+.social-icons li {
+    margin: 0 15px; /* Añade espacio entre los íconos */
+}
+
+.social-icon {
+    font-size: 30px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0056b3; /* Color cuando se pasa el ratón */
+}
+
+.social-icons i {
+    margin: 0;
+}
