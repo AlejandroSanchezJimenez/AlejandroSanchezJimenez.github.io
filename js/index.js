@@ -40,4 +40,9 @@ document.querySelectorAll('.panel').forEach(panel => {
             titulo.style.color = ''; 
         }
     });
+
+    panel.addEventListener("click", () => {
+        window.open(panel.getAttribute("data-url"), "_blank");
+    });
 });
+
