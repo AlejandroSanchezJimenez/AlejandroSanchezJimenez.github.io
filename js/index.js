@@ -1,3 +1,23 @@
+async function loadTranslations(lang) {
+    try {
+        const response = await fetch('/js/translations.json'); 
+        const translations = await response.json();
+        document.querySelectorAll('[data-key]').forEach(element => {
+            const key = element.getAttribute('data-key');
+            element.innerHTML = translations[lang][key] || 'Traducción no disponible';
+        });
+    } catch (error) {
+        console.error('Error al cargar las traducciones:', error);
+    }
+}
+
+function changeLanguage(lang) {
+    loadTranslations(lang);
+}
+
+loadTranslations('es');
+
+
 const cursor = document.getElementById("cursor");
 
 document.addEventListener("mousemove", (e) => {

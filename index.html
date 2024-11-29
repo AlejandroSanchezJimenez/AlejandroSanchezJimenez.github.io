@@ -15,14 +15,22 @@
     <div id="cursor"></div>
     <div class="row">
         <div class="p-5 col-12 col-sm-4 position-fixed d-none d-sm-block">
-            <h1>Alejandro Sánchez</h1>
-            <h5>Web developer</h5>
+            <h1 data-key="title">Alejandro Sánchez</h1>
+            <h5 data-key="developer_title">Web developer</h5>
+            <div>
+                <button onclick="changeLanguage('es')" class="flag-button">
+                    <span><img width="30px" height="30px" src="media/spain.png" alt="España" /></span>
+                </button>
+                <button onclick="changeLanguage('en')" class="flag-button">
+                    <span><img width="30px" height="30px" src="media/england.png" alt="Inglaterra" /></span>
+                </button>
+            </div>            
             <p></p>
             <nav>
                 <ul id="menu">
-                    <li><a href="#section1">Sobre mi</a></li>
-                    <li><a href="#section2">Experiencia</a></li>
-                    <li><a href="#section3">Proyectos</a></li>
+                    <li><a href="#section1" data-key="menu_about">Sobre mi</a></li>
+                    <li><a href="#section2" data-key="menu_experience">Experiencia</a></li>
+                    <li><a href="#section3" data-key="menu_projects">Proyectos</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,7 +40,7 @@
         </div>
         <div class="col-12 col-sm-8 offset-none offset-sm-4">
             <div id="section1" class="section">
-                <p>
+                <p data-key="about_intro">
                     Soy técnico en desarrollo web formado en el IES Las Fuentezuelas de Jaén. A lo largo de mi
                     trayectoria he adquirido experiencia en diversos lenguajes de programación, tales como
                     <span class="fw-bold">PHP</span>, <span class="fw-bold">JavaScript</span>,
@@ -61,15 +69,33 @@
             </div>
             <div id="section2" class="section">
                 <div class="row panel" data-url="https://www.reindal.com/">
-                    <div class="col-5">
-                        <h3 class="titulo">Reindal</h3>
+                    <div class="col-5 d-none d-sm-block">
+                        <h3 class="titulo" data-key="experience_reindal_title">Reindal</h3>
                     </div>
-                    <div class="col-7">
-                        <p>
-                        <h4>Prácticas de desarrollador web</h4>
-                        <h5>Marzo 2024 - Junio 2024</h5>
+                    <div class="col-12 d-block d-sm-none">
+                        <h3 class="titulo" data-key="experience_reindal_title">Reindal</h3>
+                        <div class="col-12 d-block d-sm-none">
+                            <h4 data-key="experience_reindal_subtitle">Prácticas de desarrollador web</h4>
+                            <h5 data-key="experience_reindal_date">Marzo 2024 - Junio 2024</h5>
+                            <br>
+                            <br>
+                            <p data-key="experience_reindal_description">
+                            Prácticas en la empresa Reindal, ubicada en Italia, como culminación de mi formación
+                            superior en Desarrollo de Aplicaciones Web (DAW). Durante esta experiencia, tengo la
+                            oportunidad de sumergirme en un entorno laboral internacional, lo que me permite
+                            desarrollar mis habilidades de comunicación en inglés y adquirir un nivel básico de
+                            italiano. Además de fortalecer mis habilidades como desarrollador, estoy aprendiendo
+                            la importancia del trabajo en equipo y la capacidad de adaptarme a nuevas
+                            tecnologías.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-7 d-none d-sm-block">
+                        <h4 data-key="experience_reindal_subtitle">Prácticas de desarrollador web</h4>
+                        <h5 data-key="experience_reindal_date">Marzo 2024 - Junio 2024</h5>
                         <br>
                         <br>
+                        <p data-key="experience_reindal_description">
                         Prácticas en la empresa Reindal, ubicada en Italia, como culminación de mi formación
                         superior en Desarrollo de Aplicaciones Web (DAW). Durante esta experiencia, tengo la
                         oportunidad de sumergirme en un entorno laboral internacional, lo que me permite
@@ -82,15 +108,29 @@
                 </div>
                 <br><br>
                 <div class="row panel" data-url="https://www.karl-nahrgang-schule.de/">
-                    <div class="col-5">
-                        <h3 class="titulo">Karl-Nahrgang-Schule</h3>
+                    <div class="col-5 d-none d-sm-block">
+                        <h3 class="titulo" data-key="experience_karl_title">Karl-Nahrgang-Schule</h3>
                     </div>
-                    <div class="col-7">
-                        <p>
-                        <h4>Prácticas de ayudante de profesor</h4>
-                        <h5>Abril 2017</h5>
+                    <div class="col-12 d-block d-sm-none">
+                        <h3 class="titulo" data-key="experience_karl_title">Karl-Nahrgang-Schule</h3>
+                        <h4 data-key="experience_karl_subtitle">Prácticas de ayudante de profesor</h4>
+                        <h5 data-key="experience_karl_date">Abril 2017</h5>
                         <br>
                         <br>
+                        <p data-key="experience_karl_description">
+                        Prácticas realizadas en la escuela Karl-Nahrgang de Dreieich, Alemania, organizadas
+                        por el instituto Santa Catalina de Alejandría y el Heinrich-Heine-Schule. Durante ese
+                        tiempo practiqué el alemán mientras aprendía el tipo de enseñanza que se aplica en
+                        un país como Alemania. La atención escolar incluye 120 niños a ser atendidos en
+                        horario principal de 11.30 a 17.00 horas
+                        </p>
+                    </div>
+                    <div class="col-7 d-none d-sm-block">
+                        <h4 data-key="experience_karl_subtitle">Prácticas de ayudante de profesor</h4>
+                        <h5 data-key="experience_karl_date">Abril 2017</h5>
+                        <br>
+                        <br>
+                        <p data-key="experience_karl_description">
                         Prácticas realizadas en la escuela Karl-Nahrgang de Dreieich, Alemania, organizadas
                         por el instituto Santa Catalina de Alejandría y el Heinrich-Heine-Schule. Durante ese
                         tiempo practiqué el alemán mientras aprendía el tipo de enseñanza que se aplica en
@@ -102,15 +142,35 @@
             </div>
             <div id="section3" class="section" >
                 <div class="row panel" data-url="https://socialmoto.online/">
-                    <div class="col-5">
-                        <h3 class="titulo">SocialMoto</h3>
+                    <div class="col-5 d-none d-sm-block">
+                        <h3 class="titulo" data-key="project_socialmoto_title">SocialMoto</h3>
                     </div>
-                    <div class="col-7">
-                        <p>
-                        <h4>Red social para moteros</h4>
-                        <h5>2024</h5>
+                    <div class="col-12 d-block d-sm-none">
+                        <h3 class="titulo" data-key="project_socialmoto_title">SocialMoto</h3>
+                        <h4 data-key="project_socialmoto_subtitle">Red social para moteros</h4>
+                        <h5 data-key="project_socialmoto_date">2024</h5>
                         <br>
                         <br>
+                        <p data-key="project_socialmoto_description">
+                        SocialMoto nació de la necesidad de realizar un proyecto final, el concepto básico es una red
+                        social donde puedes publicar comentarios y pensamientos y que tu círculo de amigos puedan
+                        participar en estos. Cuenta con búsqueda de amigos y publicaciones, notificaciones, mensajes
+                        privados y personalización de perfil. Además tienes la posibilidad de grabar tus propias rutas.
+                        <br>
+                        <br>
+                        Este proyecto es un trabajo individual realizado en <strong>Symfony</strong>,
+                        <strong>JavaScript</strong> y <strong>MySQL</strong>.
+                        Además, cuenta con <strong>Bootstrap</strong> para facilitar el diseño, el control de versiones
+                        se ha realizado en <strong>GitHub</strong>
+                        y todo está almacenado en contenedores <strong>Docker</strong> para un mejor manejo.
+                        </p>
+                    </div>
+                    <div class="col-7 d-none d-sm-block">
+                        <h4 data-key="project_socialmoto_subtitle">Red social para moteros</h4>
+                        <h5 data-key="project_socialmoto_date">2024</h5>
+                        <br>
+                        <br>
+                        <p data-key="project_socialmoto_description" >
                         SocialMoto nació de la necesidad de realizar un proyecto final, el concepto básico es una red
                         social donde puedes publicar comentarios y pensamientos y que tu círculo de amigos puedan
                         participar en estos. Cuenta con búsqueda de amigos y publicaciones, notificaciones, mensajes

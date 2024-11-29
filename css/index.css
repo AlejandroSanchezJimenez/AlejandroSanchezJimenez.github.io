@@ -108,3 +108,17 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.flag-button {
+    background: none;          /* Elimina el fondo */
+    border: none;              /* Elimina el borde */
+    padding: 0;                /* Elimina el padding */
+    cursor: pointer;          /* Cambia el cursor al pasar sobre el botón */
+    outline: none;             /* Elimina el contorno al hacer clic */
+}
+
+.flag-button img {
+    display: block;            /* Elimina el espacio debajo de la imagen */
+    width: 30px;               /* Mantiene el tamaño de la imagen */
+    height: 30px;              /* Mantiene el tamaño de la imagen */
+}
