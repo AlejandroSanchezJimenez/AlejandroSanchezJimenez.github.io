@@ -17,7 +17,7 @@ export default function Projects() {
       titulo: 'SocialMoto',
       subtitulo: 'Red social para moteros',
       ano: '2024',
-      img: '/media/socialmoto/socialmoto1.PNG',
+      img: './media/socialmoto/socialmoto1.PNG',
       descripcion:
         'SocialMoto es una red social para moteros con publicaciones, notificaciones, mensajes privados y rutas. Trabajo individual con Symfony, JavaScript y MySQL, con Bootstrap y Docker. Actualmente inactivo por falta de tiempo.',
     },
@@ -25,7 +25,7 @@ export default function Projects() {
       titulo: 'Parkly',
       subtitulo: 'App móvil para gestionar parkings de moto',
       ano: '2024-2025',
-      img: '/media/parkly/7.webp',
+      img: './media/parkly/7.webp',
       descripcion:
         'Parkly es una app móvil para localizar parkings, reservar plazas y gestionar pagos. Desarrollada con React Native y Firebase. Actualmente parada por falta de tiempo.',
     },
@@ -35,7 +35,7 @@ export default function Projects() {
     <div className='pl-8 relative'>
       <div className='flex items-center gap-4 mb-6'>
         <img
-          src='/media/engranaje.webp'
+          src='./media/engranaje.webp'
           alt='Tech Stack'
           className='w-10 h-10 object-contain'
         />

@@ -22,7 +22,7 @@ export default function Experience() {
     <div className='pl-8'>
       <div className='flex items-center gap-4 mb-6'>
         <img
-          src='/media/engranaje.webp'
+          src='./media/engranaje.webp'
           alt='Tech Stack'
           className='w-10 h-10 object-contain'
         />
