@@ -27,14 +27,6 @@ export default function Footer() {
         >
           <FaInstagram size={24} />
         </a>
-        {/* <a
-          href='https://github.com/tu-usuario'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='hover:text-gray-400 transition-colors'
-        >
-          <FaGithub size={24} />
-        </a> */}
       </div>
     </footer>
   )
