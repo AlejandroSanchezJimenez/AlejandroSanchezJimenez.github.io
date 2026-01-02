@@ -27,6 +27,14 @@ export default function Footer() {
         >
           <FaInstagram size={24} />
         </a>
+        <a
+          href='https://github.com/AlejandroSanchezJimenez/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='hover:text-pink-500 transition-colors'
+        >
+          <FaGithub size={24} />
+        </a>
       </div>
     </footer>
   )

@@ -24,7 +24,7 @@ export default function About() {
       </h2>
       <hr className='mb-6 border-gray-600' />
 
-      <div className='flex flex-col md:flex-row gap-6 md:gap-10'>
+      <div className='flex flex-col md:flex-row gap-6 md:gap-10 text-white'>
         <div className='flex flex-col w-full md:w-1/2'>
           <span className='text-3xl sm:text-4xl md:text-5xl font-bold mb-4'>
             Mi nombre es Alejandro.
