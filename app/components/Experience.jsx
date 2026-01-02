@@ -26,7 +26,9 @@ export default function Experience() {
           alt='Tech Stack'
           className='w-10 h-10 object-contain'
         />
-        <h4 className='text-3xl font-bold'>Mi experiencia</h4>
+        <h2 className='text-4xl md:text-5xl font-extrabold text-purple-400'>
+          Mi experiencia
+        </h2>
       </div>
       <div className='w-full max-w-5xl flex flex-col space-y-12'>
         {Object.entries(experience).map(([key, exp], index) => (

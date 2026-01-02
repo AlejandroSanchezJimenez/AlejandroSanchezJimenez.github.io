@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         </div>
 
         {/* Contenido */}
-        <div className='mt-[10%] relative z-10'>{children}</div>
+        <div className='mt-[10%] relative z-10 pb-10'>{children}</div>
 
         {/* Fondo animado */}
         <div className='absolute inset-0 -z-10 animate-gradient-bg'></div>

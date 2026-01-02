@@ -14,7 +14,7 @@ export default function HomePage() {
       {heroFinished && (
         <main>
           <Section id='intro' title='Frontend Developer'>
-            <p className='max-w-[40%] text-gray-300'>
+            <p className='w-full md:w-2/5 text-gray-300'>
               ¡Hola! Soy un desarrollador frontend especializado en React,
               Next.js y TypeScript. Me apasiona crear interfaces modernas,
               eficientes y accesibles. Estoy muy interesado en aprender y
@@ -27,6 +27,7 @@ export default function HomePage() {
           <Section id='tech' title='Stack Tecnológico' />
           <Section id='experience' title='Experiencia' />
           <Section id='projects' title='Formación' />
+          <Section id='education' title='Educacion' />
           <Footer />
         </main>
       )}

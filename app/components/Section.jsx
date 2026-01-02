@@ -5,6 +5,7 @@ import Projects from './Projects'
 import Experience from './Experience'
 import TechStack from './TechStack'
 import About from './About'
+import Education from './Education'
 
 export default function Section({ id, title, children }) {
   const ref = useRef()
@@ -13,7 +14,7 @@ export default function Section({ id, title, children }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.7 }
+      { threshold: 0.6 }
     )
     if (ref.current) observer.observe(ref.current)
     return () => {
@@ -21,29 +22,27 @@ export default function Section({ id, title, children }) {
     }
   }, [])
 
-  // Determinar desplazamiento según la sección
-  const translateXClass = inView ? 'translate-x-0' : '-translate-x-20'
+  const translateXClass = inView
+    ? 'translate-x-0'
+    : '-translate-x-4 sm:-translate-x-10 md:-translate-x-20'
 
-  // Contenido genérico
   const renderContent = () => {
     switch (id) {
       case 'intro':
         return (
           <>
-            <div className='pl-8'>
-              <span className='text-7xl text-purple-400 font-bold'>
-                FRONTEND
-              </span>
-              <br />
-              <span className='ml-10 text-7xl text-white font-bold'>
-                DEVELOPER
-              </span>
-              <br />
-              <br />
-              {children}
-            </div>
+            <span className='block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-purple-400 font-bold'>
+              FRONTEND
+            </span>
+
+            <span className='block mt-3 sm:ml-8 md:ml-14 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold'>
+              DEVELOPER
+            </span>
+
+            <div className='mt-10'>{children}</div>
           </>
         )
+
       case 'about':
         return <About />
 
@@ -56,12 +55,17 @@ export default function Section({ id, title, children }) {
       case 'projects':
         return <Projects />
 
+      case 'education':
+        return <Education />
+
       default:
         return (
-          <div className='pl-8'>
-            <h2 className='text-4xl font-bold mb-6'>{title}</h2>
+          <>
+            <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-6'>
+              {title}
+            </h2>
             {children}
-          </div>
+          </>
         )
     }
   }
@@ -70,10 +74,13 @@ export default function Section({ id, title, children }) {
     <section
       ref={ref}
       id={id}
-      className='relative py-20 flex flex-col items-center w-full overflow-hidden'
+      className='relative py-20 sm:py-28 md:py-36 flex flex-col items-center w-full overflow-hidden'
     >
       <div
-        className={`w-full max-w-5xl transition-transform duration-700 ease-out ${translateXClass}`}
+        className={`w-full
+        max-w-full sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl
+        px-14 sm:px-10 md:px-16 lg:px-24 xl:px-32
+        transition-transform duration-700 ease-out ${translateXClass}`}
       >
         {renderContent()}
       </div>

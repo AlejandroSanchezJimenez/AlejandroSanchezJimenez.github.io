@@ -1,9 +1,36 @@
 'use client'
-
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    const handleResize = () =>
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const isMobile = windowSize.width < 768
+
+  // Listener para cerrar la imagen al clicar fuera en móvil
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target) &&
+        isMobile
+      ) {
+        setHoveredProject(null)
+      }
+    }
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [isMobile])
 
   const projects = {
     Neosif: {
@@ -31,15 +58,49 @@ export default function Projects() {
     },
   }
 
+  // Tamaño de la imagen en desktop
+  const imageSize = { w: 288, h: 160 }
+  const offsetXDesktop = -150
+  const offsetYDesktop = -120
+
+  // Posición calculada para desktop
+  const getImagePosition = () => {
+    const w = imageSize.w
+    const h = imageSize.h
+    let left = mousePos.x + offsetXDesktop
+    let top = mousePos.y + offsetYDesktop
+
+    if (left + w > windowSize.width) left = windowSize.width - w - 10
+    if (left < 0) left = 10
+    if (top + h > windowSize.height) top = windowSize.height - h - 10
+    if (top < 0) top = 10
+
+    return { left, top, w, h }
+  }
+
+  const imgPos = getImagePosition()
+
   return (
-    <div className='pl-8 relative'>
+    <div
+      ref={containerRef}
+      className='px-4 sm:px-6 md:px-8 lg:px-12 relative'
+      onMouseMove={(e) =>
+        !isMobile && setMousePos({ x: e.clientX, y: e.clientY })
+      }
+      onTouchMove={(e) =>
+        !isMobile &&
+        setMousePos({ x: e.touches[0].clientX, y: e.touches[0].clientY })
+      }
+    >
       <div className='flex items-center gap-4 mb-6'>
         <img
           src='./media/engranaje.webp'
           alt='Tech Stack'
           className='w-10 h-10 object-contain'
         />
-        <h4 className='text-3xl font-bold'>Algunos proyectos</h4>
+        <h2 className='text-4xl md:text-5xl font-extrabold text-purple-400'>
+          Algunos proyectos
+        </h2>
       </div>
 
       <div className='w-full max-w-5xl flex flex-col space-y-8 relative'>
@@ -54,9 +115,18 @@ export default function Projects() {
               animationFillMode: 'forwards',
               opacity: 0,
             }}
-            onClick={() => project.link && window.open(project.link, '_blank')}
-            onMouseEnter={() => setHoveredProject(project)}
-            onMouseLeave={() => setHoveredProject(null)}
+            onClick={(e) => {
+              if (isMobile) {
+                e.stopPropagation() // para que el listener global no cierre inmediatamente
+                setHoveredProject(
+                  hoveredProject?.titulo === project.titulo ? null : project
+                )
+              } else {
+                setHoveredProject(project)
+              }
+            }}
+            onMouseEnter={() => !isMobile && setHoveredProject(project)}
+            onMouseLeave={() => !isMobile && setHoveredProject(null)}
           >
             <span className='absolute top-4 right-4 bg-purple-900/70 text-white text-sm px-2 py-1 rounded-full'>
               {project.ano}
@@ -71,17 +141,38 @@ export default function Projects() {
             </p>
 
             <p className='text-gray-100'>{project.descripcion}</p>
+
+            {/* Imagen en móvil al final del proyecto */}
+            {isMobile &&
+              hoveredProject?.titulo === project.titulo &&
+              hoveredProject.img && (
+                <div className='mt-4 w-full h-48 rounded-xl overflow-hidden shadow-2xl'>
+                  <img
+                    src={hoveredProject.img}
+                    alt={hoveredProject.titulo}
+                    className='w-full h-full object-cover rounded-xl'
+                  />
+                </div>
+              )}
           </div>
         ))}
       </div>
 
-      {/* Imagen flotante global */}
-      {hoveredProject?.img && (
-        <div className='fixed top-1/4 -left-[40%] w-96 h-56 rounded-xl shadow-2xl overflow-hidden z-50'>
+      {/* Imagen flotante en desktop */}
+      {!isMobile && hoveredProject?.img && (
+        <div
+          className='absolute z-50 rounded-xl shadow-2xl overflow-hidden pointer-events-none'
+          style={{
+            top: imgPos.top + 'px',
+            left: imgPos.left + 'px',
+            width: imgPos.w + 'px',
+            height: imgPos.h + 'px',
+          }}
+        >
           <img
             src={hoveredProject.img}
             alt={hoveredProject.titulo}
-            className='w-full h-full object-cover'
+            className='w-full h-full object-cover rounded-xl'
           />
         </div>
       )}
