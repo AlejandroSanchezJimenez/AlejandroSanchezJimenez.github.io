@@ -133,10 +133,6 @@ export default function Projects() {
               } else {
                 setHoveredProject(project)
               }
-
-              if (project.url) {
-                window.open(project.url, '_blank')
-              }
             }}
             onMouseEnter={() => !isMobile && setHoveredProject(project)}
             onMouseLeave={() => !isMobile && setHoveredProject(null)}
@@ -154,6 +150,18 @@ export default function Projects() {
             </p>
 
             <p className='text-gray-100'>{project.descripcion}</p>
+
+            {project.url && (
+              <a
+                href={project.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition'
+                onClick={(e) => e.stopPropagation()}
+              >
+                Ver
+              </a>
+            )}
 
             {/* Imagen en móvil al final del proyecto */}
             {isMobile &&
