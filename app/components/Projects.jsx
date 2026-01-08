@@ -56,6 +56,14 @@ export default function Projects() {
       descripcion:
         'Parkly es una app móvil para localizar parkings, reservar plazas y gestionar pagos. Desarrollada con React Native y Firebase. Actualmente parada por falta de tiempo.',
     },
+    PokeClick: {
+      titulo: 'PokeClick',
+      subtitulo: 'Web juego de colección Pokemon',
+      ano: '2026',
+      img: './media/pokeclick/pokeclick.PNG',
+      descripcion:
+        'PokeClick es un juego web de colección Pokémon. Un pequeño proyecto que permite abrir sobres con monedas conseguidas a base de clickar en la pantalla. Contiene desafios y distintos packs para obtener Pokémon y así completar tu colección. Está desarrollado en React, no tiene backend, solo usa una API pública llamada PokeAPI. Un proyecto secundario hecho en ratos libres juntando dos pasiones, la programación y Pokémon.',
+    },
   }
 
   // Tamaño de la imagen en desktop
