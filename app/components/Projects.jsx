@@ -33,6 +33,22 @@ export default function Projects() {
   }, [isMobile])
 
   const projects = {
+    MySyncedList: {
+      titulo: 'MySyncedList',
+      subtitulo: 'Aplicación para sincronizar listas de tareas',
+      url: 'https://alejandrosanchezjimenez.github.io/mysyncedlist/',
+      ano: '2026',
+      descripcion:
+        'MySyncedList es una aplicación para sincronizar listas de tareas entre dispositivos. Utiliza flutter, se creó como una necesidad personal. Permite crear listas, compartirlas con otros usuarios y sincronizarlas en tiempo real. Actualmente en desarrollo, con funcionalidades básicas implementadas y pruebas en curso.',
+    },
+    PokeClick: {
+      titulo: 'PokeClick',
+      subtitulo: 'Web juego de colección Pokemon',
+      url: 'https://alejandrosanchezjimenez.github.io/PokeClick/',
+      ano: '2026',
+      descripcion:
+        'PokeClick es un juego web de colección Pokémon. Un pequeño proyecto que permite abrir sobres con monedas conseguidas a base de clickar en la pantalla. Contiene desafios y distintos packs para obtener Pokémon y así completar tu colección. Está desarrollado en React, no tiene backend, solo usa una API pública llamada PokeAPI. Un proyecto secundario hecho en ratos libres juntando dos pasiones, la programación y Pokémon.',
+    },
     Neosif: {
       titulo: 'Neosif',
       subtitulo: 'Proyecto profesional en desarrollo',
@@ -40,30 +56,19 @@ export default function Projects() {
       descripcion:
         'Neosif es una aplicación web profesional enfocada en la normativa VERI*FACTU, desarrollada en React JS. Utiliza más de 40 componentes reutilizables y gestiona más de 50 clientes con sus empleados. Desarrollo en entorno profesional manteniendo confidencialidad.',
     },
-    SocialMoto: {
-      titulo: 'SocialMoto',
-      subtitulo: 'Red social para moteros',
-      ano: '2024',
-      img: './media/socialmoto/socialmoto1.PNG',
-      descripcion:
-        'SocialMoto es una red social para moteros con publicaciones, notificaciones, mensajes privados y rutas. Trabajo individual con Symfony, JavaScript y MySQL, con Bootstrap y Docker. Actualmente inactivo por falta de tiempo.',
-    },
     Parkly: {
       titulo: 'Parkly',
       subtitulo: 'App móvil para gestionar parkings de moto',
       ano: '2024-2025',
-      img: './media/parkly/7.webp',
       descripcion:
         'Parkly es una app móvil para localizar parkings, reservar plazas y gestionar pagos. Desarrollada con React Native y Firebase. Actualmente parada por falta de tiempo.',
     },
-    PokeClick: {
-      titulo: 'PokeClick',
-      subtitulo: 'Web juego de colección Pokemon',
-      ano: '2026',
-      img: './media/pokeclick/pokeclick.PNG',
-      url: 'https://alejandrosanchezjimenez.github.io/PokeClick/',
+    SocialMoto: {
+      titulo: 'SocialMoto',
+      subtitulo: 'Red social para moteros',
+      ano: '2024',
       descripcion:
-        'PokeClick es un juego web de colección Pokémon. Un pequeño proyecto que permite abrir sobres con monedas conseguidas a base de clickar en la pantalla. Contiene desafios y distintos packs para obtener Pokémon y así completar tu colección. Está desarrollado en React, no tiene backend, solo usa una API pública llamada PokeAPI. Un proyecto secundario hecho en ratos libres juntando dos pasiones, la programación y Pokémon.',
+        'SocialMoto es una red social para moteros con publicaciones, notificaciones, mensajes privados y rutas. Trabajo individual con Symfony, JavaScript y MySQL, con Bootstrap y Docker. Actualmente inactivo por falta de tiempo.',
     },
   }
 
@@ -116,7 +121,9 @@ export default function Projects() {
         {Object.entries(projects).map(([key, project], index) => (
           <div
             key={key}
-            className='relative overflow-hidden rounded-2xl shadow-2xl p-6 bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-500 transform transition duration-700 ease-out hover:scale-105 cursor-pointer'
+            className={`relative overflow-hidden rounded-2xl shadow-2xl p-6 bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-500 transform transition duration-700 ease-out hover:scale-105 ${
+              project.url ? 'cursor-pointer' : 'cursor-default'
+            }`}
             style={{
               animationDelay: `${index * 150}ms`,
               animationName: 'fadeSlide',
@@ -125,10 +132,15 @@ export default function Projects() {
               opacity: 0,
             }}
             onClick={(e) => {
+              if (project.url) {
+                window.open(project.url, '_blank', 'noopener,noreferrer')
+                return
+              }
+
               if (isMobile) {
-                e.stopPropagation() // para que el listener global no cierre inmediatamente
+                e.stopPropagation()
                 setHoveredProject(
-                  hoveredProject?.titulo === project.titulo ? null : project
+                  hoveredProject?.titulo === project.titulo ? null : project,
                 )
               } else {
                 setHoveredProject(project)
@@ -150,18 +162,6 @@ export default function Projects() {
             </p>
 
             <p className='text-gray-100'>{project.descripcion}</p>
-
-            {project.url && (
-              <a
-                href={project.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition'
-                onClick={(e) => e.stopPropagation()}
-              >
-                Ver
-              </a>
-            )}
 
             {/* Imagen en móvil al final del proyecto */}
             {isMobile &&
