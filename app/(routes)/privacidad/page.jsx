@@ -1,6 +1,6 @@
 // app/(routes)/privacidad/page.jsx
 import { Suspense } from 'react'
-import PrivacidadContent from './PrivacidadContent'
+import PrivacidadContent from './components/PrivacidadContent'
 
 export default function PrivacidadPage() {
   return (
