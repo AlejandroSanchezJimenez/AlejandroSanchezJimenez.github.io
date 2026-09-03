@@ -99,14 +99,122 @@ const PRIVACY_POLICIES = {
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
             Puedes solicitar acceso, rectificación o eliminación de tus datos
-            personales en cualquier momento escribiendo a{' '}
-            <a
-              href="mailto:alejandro.sanjim2000@gmail.com"
-              className="font-medium text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-slate-900"
-            >
-              alejandro.sanjim2000@gmail.com
-            </a>
-            .
+            personales en cualquier momento escribiendo a
+            alejandro.sanjim2000@gmail.com
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política ocasionalmente. Cualquier cambio se
+            reflejará en esta misma página con la fecha de actualización
+            correspondiente.
+          </p>
+        )
+      }
+    ]
+  },
+
+  totallystyled: {
+    nombre: 'TotallyStyled',
+    fechaActualizacion: '3 de septiembre de 2026',
+
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <ul className="space-y-5">
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg  text-sm">
+                01
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de cuenta.
+                </span>{' '}
+                Correo electrónico y, en su caso, nombre de usuario, necesarios
+                para iniciar sesión y acceder a la app.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                02
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Contenido generado por el usuario.
+                </span>{' '}
+                Fotografías de prendas de ropa y accesorios que subas a la app,
+                así como las combinaciones de outfits que crees y guardes. Las
+                imágenes se almacenan a través de Cloudinary.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                03
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos técnicos básicos.
+                </span>{' '}
+                Identificadores de dispositivo e información de uso necesarios
+                para el funcionamiento del servicio.
+              </p>
+            </li>
+          </ul>
+        )
+      },
+
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Los datos recogidos se utilizan exclusivamente para ofrecer la
+            funcionalidad de la app: gestionar tu cuenta, almacenar las imágenes
+            de tus prendas y permitirte crear y guardar combinaciones de
+            outfits.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Con quién compartimos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Utilizamos Cloudinary como proveedor de almacenamiento y
+            procesamiento de imágenes. No vendemos ni compartimos tus datos con
+            terceros con fines publicitarios.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Conservamos tus datos, incluidas las imágenes subidas, mientras
+            mantengas una cuenta activa. Puedes solicitar la eliminación de tu
+            cuenta y de los datos asociados en cualquier momento contactando con
+            nosotros.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Puedes solicitar acceso, rectificación o eliminación de tus datos
+            personales en cualquier momento escribiendo a
+            alejandro.sanjim2000@gmail.com
           </p>
         )
       },
