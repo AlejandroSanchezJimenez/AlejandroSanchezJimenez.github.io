@@ -230,6 +230,138 @@ const PRIVACY_POLICIES = {
         )
       }
     ]
+  },
+
+  rasearch: {
+    nombre: 'RAsearch',
+    fechaActualizacion: '7 de septiembre de 2026',
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <ul className="space-y-5">
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                01
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos personales.
+                </span>{' '}
+                RAsearch no requiere que el usuario cree una cuenta ni
+                proporciona datos personales para utilizar sus funciones
+                principales.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                02
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Información de los jeroglíficos.
+                </span>{' '}
+                La aplicación utiliza una base de datos de jeroglíficos que
+                contiene información como identificadores, representaciones,
+                significados, transliteraciones y otros datos relacionados con
+                la escritura del Antiguo Egipto.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                03
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos técnicos.
+                </span>{' '}
+                Podrían procesarse datos técnicos básicos necesarios para el
+                funcionamiento de la aplicación y de los servicios utilizados,
+                como información relacionada con el dispositivo o la conexión.
+              </p>
+            </li>
+          </ul>
+        )
+      },
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Los datos y recursos utilizados por RAsearch se emplean
+            exclusivamente para proporcionar las funcionalidades de la
+            aplicación, incluyendo la búsqueda, consulta y visualización de
+            información sobre jeroglíficos del Antiguo Egipto y la generación de
+            documentos PDF.
+          </p>
+        )
+      },
+      {
+        titulo: 'Servicios de terceros',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            RAsearch utiliza Firebase, proporcionado por Google, como
+            infraestructura para determinados servicios de la aplicación,
+            incluyendo el almacenamiento y consulta de información. Estos
+            servicios pueden procesar información técnica necesaria para su
+            funcionamiento de acuerdo con sus propias políticas de privacidad.
+            RAsearch no vende ni comparte datos personales con terceros con
+            fines publicitarios.
+          </p>
+        )
+      },
+      {
+        titulo: 'Publicidad y seguimiento',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            RAsearch no vende datos personales y no utiliza los datos del
+            usuario para crear perfiles publicitarios. La aplicación no requiere
+            el registro de una cuenta para acceder a sus funcionalidades
+            principales.
+          </p>
+        )
+      },
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Al no requerir una cuenta de usuario para sus funcionalidades
+            principales, RAsearch no mantiene un perfil personal del usuario.
+            Los datos necesarios para el funcionamiento de los servicios
+            utilizados por la aplicación se conservan durante el tiempo
+            necesario para proporcionar dichos servicios.
+          </p>
+        )
+      },
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Si consideras que la aplicación puede estar tratando datos
+            personales relacionados contigo y deseas ejercer tus derechos de
+            acceso, rectificación o eliminación, puedes contactar con nosotros
+            escribiendo a{' '}
+            <span className="font-medium text-slate-900">
+              alejandro.sanjim2000@gmail.com
+            </span>
+            .
+          </p>
+        )
+      },
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política de privacidad ocasionalmente para
+            reflejar cambios en la aplicación, en los servicios utilizados o en
+            los requisitos legales aplicables. Cualquier modificación se
+            reflejará en esta misma página indicando la fecha de actualización
+            correspondiente.
+          </p>
+        )
+      }
+    ]
   }
 
   // Ejemplo de cómo añadir una futura app:
