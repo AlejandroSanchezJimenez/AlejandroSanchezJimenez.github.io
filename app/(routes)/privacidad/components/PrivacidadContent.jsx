@@ -233,7 +233,7 @@ const PRIVACY_POLICIES = {
   },
 
   rasearch: {
-    nombre: 'RAsearch',
+    nombre: 'RaSearch',
     fechaActualizacion: '7 de septiembre de 2026',
     secciones: [
       {
