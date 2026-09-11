@@ -362,7 +362,102 @@ const PRIVACY_POLICIES = {
         )
       }
     ]
-  }
+  },
+
+    crowfall: {
+    nombre: 'CrowFall',
+    fechaActualizacion: '11 de septiembre de 2026',
+
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            CrowFall no recopila ni almacena datos personales de los usuarios.
+            La aplicación no requiere crear una cuenta, iniciar sesión ni
+            proporcionar ningún tipo de información personal para jugar.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            CrowFall no recopila datos personales y, por tanto, no utiliza
+            información personal de los usuarios. La aplicación está diseñada
+            para poder jugar directamente sin necesidad de registrarse o
+            iniciar sesión.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Almacenamiento de datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            CrowFall no almacena datos personales en servidores ni mantiene
+            cuentas o perfiles de usuario. No existe ningún sistema de registro
+            o inicio de sesión asociado a la aplicación.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Servicios de terceros',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            CrowFall no comparte datos personales con terceros. La aplicación
+            no utiliza información personal del usuario con fines publicitarios
+            ni para crear perfiles.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Publicidad y seguimiento',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            CrowFall no utiliza datos personales para realizar seguimiento de
+            los usuarios ni para crear perfiles publicitarios.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Al no recopilar ni almacenar datos personales, CrowFall no mantiene
+            información personal del usuario que deba conservarse o eliminarse.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Como CrowFall no recopila ni almacena datos personales de los
+            usuarios, no existe información personal asociada a una cuenta que
+            pueda ser consultada, modificada o eliminada.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política de privacidad ocasionalmente para
+            reflejar cambios en la aplicación o en los requisitos legales
+            aplicables. Cualquier modificación se reflejará en esta misma página
+            indicando la fecha de actualización correspondiente.
+          </p>
+        )
+      }
+    ]
+  },
 
   // Ejemplo de cómo añadir una futura app:
   //
