@@ -31,15 +31,15 @@ export default function Section({ id, title, children }) {
       case 'intro':
         return (
           <>
-            <span className='block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-purple-400 font-bold'>
-              FRONTEND
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-purple-400 font-bold">
+              FULLSTACK
             </span>
 
-            <span className='block mt-3 sm:ml-8 md:ml-14 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold'>
+            <span className="block mt-3 sm:ml-8 md:ml-14 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold">
               DEVELOPER
             </span>
 
-            <div className='mt-10'>{children}</div>
+            <div className="mt-10">{children}</div>
           </>
         )
 
@@ -61,7 +61,7 @@ export default function Section({ id, title, children }) {
       default:
         return (
           <>
-            <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-6'>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               {title}
             </h2>
             {children}
@@ -74,7 +74,7 @@ export default function Section({ id, title, children }) {
     <section
       ref={ref}
       id={id}
-      className='relative py-20 sm:py-28 md:py-36 flex flex-col items-center w-full overflow-hidden'
+      className="relative py-20 sm:py-28 md:py-36 flex flex-col items-center w-full overflow-hidden"
     >
       <div
         className={`w-full
