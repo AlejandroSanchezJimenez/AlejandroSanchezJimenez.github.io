@@ -364,7 +364,7 @@ const PRIVACY_POLICIES = {
     ]
   },
 
-    crowfall: {
+  crowfall: {
     nombre: 'CrowFall',
     fechaActualizacion: '11 de septiembre de 2026',
 
@@ -386,8 +386,8 @@ const PRIVACY_POLICIES = {
           <p className="m-0 leading-7 text-slate-600">
             CrowFall no recopila datos personales y, por tanto, no utiliza
             información personal de los usuarios. La aplicación está diseñada
-            para poder jugar directamente sin necesidad de registrarse o
-            iniciar sesión.
+            para poder jugar directamente sin necesidad de registrarse o iniciar
+            sesión.
           </p>
         )
       },
@@ -407,9 +407,9 @@ const PRIVACY_POLICIES = {
         titulo: 'Servicios de terceros',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            CrowFall no comparte datos personales con terceros. La aplicación
-            no utiliza información personal del usuario con fines publicitarios
-            ni para crear perfiles.
+            CrowFall no comparte datos personales con terceros. La aplicación no
+            utiliza información personal del usuario con fines publicitarios ni
+            para crear perfiles.
           </p>
         )
       },
@@ -457,7 +457,7 @@ const PRIVACY_POLICIES = {
         )
       }
     ]
-  },
+  }
 
   // Ejemplo de cómo añadir una futura app:
   //

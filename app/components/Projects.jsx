@@ -1,45 +1,54 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
+
+const PREVIEW_W = 440
+const PREVIEW_H = 320
 
 export default function Projects() {
-  const [hoveredProject, setHoveredProject] = useState(null)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const containerRef = useRef(null)
+  // Vista previa flotante al hacer hover sobre una miniatura
+  const [preview, setPreview] = useState(null) // { src, top, left }
 
-  useEffect(() => {
-    const handleResize = () =>
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight })
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  const handleEnter = (e, src) => {
+    const container = containerRef.current
+    if (!container) return
+    const containerRect = container.getBoundingClientRect()
+    const rect = e.currentTarget.getBoundingClientRect()
 
-  const isMobile = windowSize.width < 768
+    let left = rect.left - containerRect.left + rect.width / 2 - PREVIEW_W / 2
+    const maxLeft = containerRect.width - PREVIEW_W - 8
+    if (left < 8) left = 8
+    if (left > maxLeft) left = maxLeft
 
-  // Listener para cerrar la imagen al clicar fuera en móvil
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target) &&
-        isMobile
-      ) {
-        setHoveredProject(null)
-      }
+    let top = rect.top - containerRect.top - PREVIEW_H - 12
+    if (top < 8) {
+      top = rect.bottom - containerRect.top + 12
     }
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [isMobile])
+
+    setPreview({ src, top, left })
+  }
+
+  const handleLeave = () => setPreview(null)
 
   const projects = {
+    CrowFall: {
+      titulo: 'CrowFall',
+      subtitulo:
+        'Juego arcade roguelite de conseguir puntos y monedas hasta llegar al nido final ',
+      ano: '2026',
+      descripcion:
+        'CrowFall es un juego arcade roguelite donde los jugadores manejan a un cuervo que salta entre una ciudad en ruinas para llegar a su nido. Utiliza Flutter para su desarrollo y ofrece una experiencia de juego dinámica y desafiante. Actualmente en desarrollo, preparando su ficha para App Store.',
+      appStore: '',
+      img: []
+    },
     RaSearch: {
       titulo: 'RaSearch',
       subtitulo: 'App de catálogo y búsqueda de jeroglíficos egipcios',
       ano: '2026',
       descripcion:
         'RaSearch es una aplicación Flutter para catalogar y buscar jeroglíficos egipcios. Utiliza Firebase y Firestore para almacenar los datos, con una búsqueda universal por código Gardiner, Unicode, símbolo o texto libre, organizada por categorías Gardiner. Incluye caché local con Hive, sistema de favoritos e historial de búsquedas recientes guardado por dispositivo sin necesidad de login, copia de símbolos al portapapeles y la opción de compartir la ficha de cada jeroglífico como PDF. Actualmente en desarrollo, preparando su ficha para App Store.',
-      appStore: ''
+      appStore: 'https://apps.apple.com/es/app/rasearch/id6809452019',
+      img: []
     },
     TotallyStyled: {
       titulo: 'TotallyStyled',
@@ -49,7 +58,8 @@ export default function Projects() {
       ano: '2026',
       descripcion:
         'TotallyStyled nace del amor y de la necesidad. Mi pareja necesitaba una aplicación para guardar sus outfits, pero no encontró una que se ajustara a sus necesidades. Fue entonces que decidí crear una, y con la ayuda de Clueless (película icónica) en un par de días le di solución. Está creado en Flutter, utiliza Firebase y Firestore para almacenar los datos, y utiliza Flutter UI para la interfaz. Actualmente en desarrollo, con funcionalidades básicas implementadas y pruebas en curso.',
-      appStore: ''
+      appStore: 'https://apps.apple.com/es/app/totally-styled/id6808181347',
+      img: []
     },
     MySyncedList: {
       titulo: 'MySyncedList',
@@ -58,7 +68,8 @@ export default function Projects() {
       ano: '2026',
       descripcion:
         'MySyncedList es una aplicación para sincronizar listas de tareas entre dispositivos. Utiliza flutter, se creó como una necesidad personal. Permite crear listas, compartirlas con otros usuarios y sincronizarlas en tiempo real. Actualmente en desarrollo, con funcionalidades básicas implementadas y pruebas en curso.',
-      appStore: 'https://apps.apple.com/es/app/mysyncedlist/id6807769925'
+      appStore: 'https://apps.apple.com/es/app/mysyncedlist/id6807769925',
+      img: []
     },
     PokeClick: {
       titulo: 'PokeClick',
@@ -67,7 +78,14 @@ export default function Projects() {
       ano: '2026',
       descripcion:
         'PokeClick es un juego web de colección Pokémon. Un pequeño proyecto que permite abrir sobres con monedas conseguidas a base de clickar en la pantalla. Contiene desafios y distintos packs para obtener Pokémon y así completar tu colección. Está desarrollado en React, no tiene backend, solo usa una API pública llamada PokeAPI. Un proyecto secundario hecho en ratos libres juntando dos pasiones, la programación y Pokémon.',
-      appStore: ''
+      appStore: '',
+      img: [
+        './media/pokeclick/pokeclick.PNG',
+        './media/pokeclick/Captura.PNG',
+        './media/pokeclick/2.PNG',
+        './media/pokeclick/3.PNG',
+        './media/pokeclick/4.PNG'
+      ]
     },
     Neosif: {
       titulo: 'Neosif',
@@ -75,7 +93,8 @@ export default function Projects() {
       ano: '2025',
       descripcion:
         'Neosif es una aplicación web profesional enfocada en la normativa VERI*FACTU, desarrollada en React JS. Utiliza más de 40 componentes reutilizables y gestiona más de 50 clientes con sus empleados. Desarrollo en entorno profesional manteniendo confidencialidad.',
-      appStore: ''
+      appStore: '',
+      img: []
     },
     Parkly: {
       titulo: 'Parkly',
@@ -83,7 +102,8 @@ export default function Projects() {
       ano: '2024-2025',
       descripcion:
         'Parkly es una app móvil para localizar parkings, reservar plazas y gestionar pagos. Desarrollada con React Native y Firebase. Actualmente parada por falta de tiempo.',
-      appStore: ''
+      appStore: '',
+      img: []
     },
     SocialMoto: {
       titulo: 'SocialMoto',
@@ -91,44 +111,20 @@ export default function Projects() {
       ano: '2024',
       descripcion:
         'SocialMoto es una red social para moteros con publicaciones, notificaciones, mensajes privados y rutas. Trabajo individual con Symfony, JavaScript y MySQL, con Bootstrap y Docker. Actualmente inactivo por falta de tiempo.',
-      appStore: ''
+      appStore: '',
+      img: [
+        './media/socialmoto/socialmoto1.PNG',
+        './media/socialmoto/socialmoto5.PNG',
+        './media/socialmoto/socialmoto7.PNG',
+        './media/socialmoto/socialmoto8.PNG',
+        './media/socialmoto/socialmoto10.PNG',
+        './media/socialmoto/socialmoto11.PNG'
+      ]
     }
   }
 
-  // Tamaño de la imagen en desktop
-  const imageSize = { w: 288, h: 160 }
-  const offsetXDesktop = -150
-  const offsetYDesktop = -120
-
-  // Posición calculada para desktop
-  const getImagePosition = () => {
-    const w = imageSize.w
-    const h = imageSize.h
-    let left = mousePos.x + offsetXDesktop
-    let top = mousePos.y + offsetYDesktop
-
-    if (left + w > windowSize.width) left = windowSize.width - w - 10
-    if (left < 0) left = 10
-    if (top + h > windowSize.height) top = windowSize.height - h - 10
-    if (top < 0) top = 10
-
-    return { left, top, w, h }
-  }
-
-  const imgPos = getImagePosition()
-
   return (
-    <div
-      ref={containerRef}
-      className="px-4 sm:px-6 md:px-8 lg:px-12 relative"
-      onMouseMove={(e) =>
-        !isMobile && setMousePos({ x: e.clientX, y: e.clientY })
-      }
-      onTouchMove={(e) =>
-        !isMobile &&
-        setMousePos({ x: e.touches[0].clientX, y: e.touches[0].clientY })
-      }
-    >
+    <div ref={containerRef} className="px-4 sm:px-6 md:px-8 lg:px-12 relative">
       <div className="flex items-center gap-4 mb-6">
         <img
           src="./media/engranaje.webp"
@@ -154,23 +150,11 @@ export default function Projects() {
               animationFillMode: 'forwards',
               opacity: 0
             }}
-            onClick={(e) => {
+            onClick={() => {
               if (project.url) {
                 window.open(project.url, '_blank', 'noopener,noreferrer')
-                return
-              }
-
-              if (isMobile) {
-                e.stopPropagation()
-                setHoveredProject(
-                  hoveredProject?.titulo === project.titulo ? null : project
-                )
-              } else {
-                setHoveredProject(project)
               }
             }}
-            onMouseEnter={() => !isMobile && setHoveredProject(project)}
-            onMouseLeave={() => !isMobile && setHoveredProject(null)}
           >
             <span className="absolute top-4 right-4 bg-purple-900/70 text-white text-sm px-2 py-1 rounded-full">
               {project.ano}
@@ -185,6 +169,34 @@ export default function Projects() {
             </p>
 
             <p className="text-gray-100">{project.descripcion}</p>
+
+            {/* Galería de imágenes del proyecto, justo debajo de la descripción */}
+            {project.img && project.img.length > 0 && (
+              <div
+                className={`mt-4 grid gap-3 ${
+                  project.img.length === 1
+                    ? 'grid-cols-1'
+                    : project.img.length === 2
+                      ? 'grid-cols-2'
+                      : 'grid-cols-2 sm:grid-cols-3'
+                }`}
+              >
+                {project.img.map((src, i) => (
+                  <div
+                    key={i}
+                    onMouseEnter={(e) => handleEnter(e, src)}
+                    onMouseLeave={handleLeave}
+                    className="relative w-full h-40 rounded-xl overflow-hidden shadow-lg group"
+                  >
+                    <img
+                      src={src}
+                      alt={`${project.titulo} ${i + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
 
             {project.appStore && (
               <a
@@ -204,38 +216,26 @@ export default function Projects() {
                 Descarga en App Store
               </a>
             )}
-
-            {/* Imagen en móvil al final del proyecto */}
-            {isMobile &&
-              hoveredProject?.titulo === project.titulo &&
-              hoveredProject.img && (
-                <div className="mt-4 w-full h-48 rounded-xl overflow-hidden shadow-2xl">
-                  <img
-                    src={hoveredProject.img}
-                    alt={hoveredProject.titulo}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
-              )}
           </div>
         ))}
       </div>
 
-      {/* Imagen flotante en desktop */}
-      {!isMobile && hoveredProject?.img && (
+      {/* Vista previa flotante: aparece al pasar el ratón por una miniatura, */}
+      {/* posicionada respecto al contenedor (sigue el scroll actual) */}
+      {preview && (
         <div
-          className="absolute z-50 rounded-xl shadow-2xl overflow-hidden pointer-events-none"
+          className="absolute z-50 rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-black/90 pointer-events-none flex items-center justify-center"
           style={{
-            top: imgPos.top + 'px',
-            left: imgPos.left + 'px',
-            width: imgPos.w + 'px',
-            height: imgPos.h + 'px'
+            top: preview.top + 'px',
+            left: preview.left + 'px',
+            width: PREVIEW_W + 'px',
+            height: PREVIEW_H + 'px'
           }}
         >
           <img
-            src={hoveredProject.img}
-            alt={hoveredProject.titulo}
-            className="w-full h-full object-cover rounded-xl"
+            src={preview.src}
+            alt="Vista previa"
+            className="max-w-full max-h-full object-contain"
           />
         </div>
       )}
