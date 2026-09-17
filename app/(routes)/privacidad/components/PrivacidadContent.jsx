@@ -457,6 +457,171 @@ const PRIVACY_POLICIES = {
         )
       }
     ]
+  },
+
+  parkly: {
+    nombre: 'Parkly',
+    fechaActualizacion: '17 de septiembre de 2026',
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <ul className="space-y-5">
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                01
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de cuenta.
+                </span>{' '}
+                Correo electrónico y la información básica asociada a tu perfil,
+                necesarios para crear y gestionar tu cuenta en Parkly.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                02
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de ubicación.
+                </span>{' '}
+                Parkly puede utilizar la ubicación de tu dispositivo para
+                mostrar tu posición en el mapa, ayudarte a encontrar parkings
+                para motos cercanos y ofrecer las funcionalidades relacionadas
+                con el mapa.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                03
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Contenido generado por el usuario.
+                </span>{' '}
+                Información sobre parkings para motos que añadas a la
+                aplicación, así como los lugares que guardes como favoritos y la
+                información relacionada con tus contribuciones a la comunidad.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                04
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de actividad.
+                </span>{' '}
+                Puntos y otra información relacionada con las contribuciones
+                realizadas dentro de Parkly, utilizada para mantener el sistema
+                de participación y el perfil del usuario.
+              </p>
+            </li>
+          </ul>
+        )
+      },
+
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Los datos recogidos se utilizan para proporcionar las
+            funcionalidades de Parkly, incluyendo la gestión de tu cuenta y
+            perfil, mostrar mapas y ubicaciones de parkings para motos, ayudarte
+            a encontrar lugares cercanos, guardar tus favoritos y gestionar los
+            puntos obtenidos por tus contribuciones a la comunidad.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Uso de la ubicación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Parkly utiliza la ubicación del dispositivo únicamente cuando es
+            necesaria para las funcionalidades relacionadas con el mapa y la
+            búsqueda de parkings cercanos. El acceso a la ubicación depende de
+            los permisos que concedas al sistema operativo. Puedes modificar o
+            retirar estos permisos en cualquier momento desde los ajustes de tu
+            dispositivo. Parkly no utiliza la ubicación para crear perfiles
+            publicitarios ni para vender información sobre los usuarios.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Con quién compartimos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Parkly puede utilizar servicios de terceros necesarios para
+            proporcionar determinadas funcionalidades de la aplicación, como
+            servicios de autenticación, almacenamiento de datos o mapas. Estos
+            proveedores pueden procesar la información necesaria para prestar
+            dichos servicios de acuerdo con sus propias políticas de privacidad.
+            No vendemos los datos personales de los usuarios ni los compartimos
+            con terceros para fines publicitarios.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Conservamos los datos asociados a tu cuenta mientras mantengas una
+            cuenta activa o mientras sean necesarios para proporcionar las
+            funcionalidades de Parkly. Puedes solicitar la eliminación de tu
+            cuenta y de los datos personales asociados en cualquier momento
+            contactando con nosotros.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Puedes solicitar acceso, rectificación o eliminación de tus datos
+            personales, así como realizar cualquier consulta relacionada con el
+            tratamiento de tus datos, escribiendo a{' '}
+            <span className="font-medium text-slate-900">
+              alejandro.sanjim2000@gmail.com
+            </span>
+            .
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Publicidad y seguimiento',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Parkly no vende datos personales ni utiliza la información de
+            ubicación o del perfil para crear perfiles publicitarios. Los datos
+            recogidos se utilizan para proporcionar las funcionalidades propias
+            de la aplicación.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política de privacidad ocasionalmente para
+            reflejar cambios en la aplicación, en los servicios utilizados o en
+            los requisitos legales aplicables. Cualquier modificación se
+            reflejará en esta misma página indicando la fecha de actualización
+            correspondiente.
+          </p>
+        )
+      }
+    ]
   }
 
   // Ejemplo de cómo añadir una futura app:
