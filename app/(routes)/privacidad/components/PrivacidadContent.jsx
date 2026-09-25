@@ -622,7 +622,161 @@ const PRIVACY_POLICIES = {
         )
       }
     ]
-  }
+  },
+
+pastillero: {
+  nombre: 'Pastillero+',
+  fechaActualizacion: '25 de septiembre de 2026',
+
+  secciones: [
+    {
+      titulo: 'Datos que recogemos',
+      contenido: (
+        <ul className="space-y-5">
+          <li className="flex gap-4">
+            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+              01
+            </div>
+            <p className="m-0 leading-7 text-slate-600">
+              <span className="font-semibold text-slate-900">
+                Datos personales.
+              </span>{' '}
+              Pastillero+ no requiere crear una cuenta ni iniciar sesión y no
+              solicita datos personales para utilizar sus funcionalidades.
+            </p>
+          </li>
+
+          <li className="flex gap-4">
+            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+              02
+            </div>
+            <p className="m-0 leading-7 text-slate-600">
+              <span className="font-semibold text-slate-900">
+                Información de medicamentos.
+              </span>{' '}
+              Los medicamentos, dosis, horarios y demás información que
+              introduzcas en la aplicación se almacenan localmente en tu
+              dispositivo.
+            </p>
+          </li>
+
+          <li className="flex gap-4">
+            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+              03
+            </div>
+            <p className="m-0 leading-7 text-slate-600">
+              <span className="font-semibold text-slate-900">
+                Datos de uso de la aplicación.
+              </span>{' '}
+              Pastillero+ no recopila ni envía a servidores información personal
+              relacionada con el uso de la aplicación.
+            </p>
+          </li>
+        </ul>
+      )
+    },
+
+    {
+      titulo: 'Cómo usamos los datos',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          La información introducida en Pastillero+ se utiliza exclusivamente
+          para proporcionar las funcionalidades de la aplicación, como
+          organizar medicamentos, configurar dosis y horarios y mostrar
+          recordatorios de las tomas programadas.
+        </p>
+      )
+    },
+
+    {
+      titulo: 'Almacenamiento de datos',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          Toda la información introducida por el usuario se almacena
+          localmente en el dispositivo. Pastillero+ no utiliza servidores,
+          cuentas de usuario ni servicios de almacenamiento en la nube para
+          almacenar la información de los medicamentos o las dosis.
+        </p>
+      )
+    },
+
+    {
+      titulo: 'Notificaciones',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          Pastillero+ puede utilizar notificaciones locales del dispositivo
+          para recordar al usuario las dosis programadas. Estas notificaciones
+          se generan y gestionan localmente en el dispositivo y no requieren
+          enviar los datos de las dosis a un servidor externo.
+        </p>
+      )
+    },
+
+    {
+      titulo: 'Servicios de terceros',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          Pastillero+ no utiliza servicios de terceros para recopilar,
+          almacenar o procesar los datos personales o la información de
+          medicamentos introducida por el usuario.
+        </p>
+      )
+    },
+
+    {
+      titulo: 'Publicidad y seguimiento',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          Pastillero+ no vende datos personales ni utiliza la información del
+          usuario para crear perfiles publicitarios. La aplicación no requiere
+          una cuenta y no utiliza los datos introducidos para realizar
+          seguimiento del usuario.
+        </p>
+      )
+    },
+
+    {
+      titulo: 'Conservación y eliminación',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          Los datos se conservan localmente en el dispositivo mientras la
+          aplicación los necesite. El usuario puede eliminar la información
+          almacenada desde las propias funcionalidades de la aplicación o
+          eliminando los datos de la aplicación del dispositivo.
+        </p>
+      )
+    },
+
+    {
+      titulo: 'Tus derechos',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          Como Pastillero+ no recopila ni almacena datos personales en
+          servidores, no mantiene un perfil personal del usuario. Si tienes
+          alguna consulta relacionada con la privacidad de la aplicación,
+          puedes contactar con nosotros escribiendo a{' '}
+          <span className="font-medium text-slate-900">
+            alejandro.sanjim2000@gmail.com
+          </span>
+          .
+        </p>
+      )
+    },
+
+    {
+      titulo: 'Cambios en esta política',
+      contenido: (
+        <p className="m-0 leading-7 text-slate-600">
+          Podemos actualizar esta política de privacidad ocasionalmente para
+          reflejar cambios en la aplicación o en los requisitos legales
+          aplicables. Cualquier modificación se reflejará en esta misma página
+          indicando la fecha de actualización correspondiente.
+        </p>
+      )
+    }
+  ]
+},
+
 
   // Ejemplo de cómo añadir una futura app:
   //
