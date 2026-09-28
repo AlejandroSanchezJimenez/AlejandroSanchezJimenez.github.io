@@ -31,6 +31,15 @@ export default function Projects() {
   const handleLeave = () => setPreview(null)
 
   const projects = {
+    'Pastillero+': {
+      titulo: 'Pastillero+',
+      subtitulo: 'App para gestionar medicamentos y recordatorios',
+      ano: '2026',
+      descripcion:
+        'Aplicación móvil centrada en la organización y seguimiento de tratamientos médicos. Permite crear medicamentos, configurar diferentes dosis y horarios y generar recordatorios automáticos para cada toma. El sistema gestiona las dosis de forma individual, facilitando el seguimiento de tratamientos con varias tomas diarias y permitiendo consultar y administrar las dosis programadas. La aplicación funciona de forma completamente local, por lo que los datos y recordatorios permanecen disponibles sin conexión a Internet.',
+      appStore: '',
+      img: []
+    },
     CrowFall: {
       titulo: 'CrowFall',
       subtitulo:
@@ -102,7 +111,7 @@ export default function Projects() {
       ano: '2024-2025',
       descripcion:
         'Parkly es una app móvil para localizar parkings, reservar plazas y gestionar pagos. Desarrollada con React Native y Firebase. Actualmente parada por falta de tiempo.',
-      appStore: '',
+      appStore: 'https://apps.apple.com/es/app/parkly/id6813046542',
       img: []
     },
     SocialMoto: {
