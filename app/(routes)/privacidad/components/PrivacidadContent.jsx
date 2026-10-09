@@ -776,9 +776,8 @@ pastillero: {
     }
   ]
 },
-
-  {
-nombre: 'ScanVault',
+  scanvault: {
+    nombre: 'ScanVault',
 fechaActualizacion: '9 de octubre de 2026',
 
 secciones: [
