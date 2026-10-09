@@ -777,6 +777,162 @@ pastillero: {
   ]
 },
 
+  {
+nombre: 'ScanVault',
+fechaActualizacion: '9 de octubre de 2026',
+
+secciones: [
+  {
+    titulo: 'Datos que recogemos',
+    contenido: (
+      <ul className="space-y-5">
+        <li className="flex gap-4">
+          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+            01
+          </div>
+
+          <p className="m-0 leading-7 text-slate-600">
+            <span className="font-semibold text-slate-900">
+              Datos de cuenta.
+            </span>{' '}
+            Correo electrónico e identificadores de usuario gestionados a
+            través de Firebase Authentication, necesarios para identificar
+            y gestionar tu cuenta.
+          </p>
+        </li>
+
+        <li className="flex gap-4">
+          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+            02
+          </div>
+
+          <p className="m-0 leading-7 text-slate-600">
+            <span className="font-semibold text-slate-900">
+              Documentos e imágenes escaneados.
+            </span>{' '}
+            Las imágenes, archivos y documentos que decidas importar,
+            capturar o guardar mediante la aplicación. Si la funcionalidad
+            de sincronización está habilitada, estos archivos podrán
+            almacenarse en Firebase Storage y los metadatos asociados en
+            Firebase Firestore.
+          </p>
+        </li>
+
+        <li className="flex gap-4">
+          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+            03
+          </div>
+
+          <p className="m-0 leading-7 text-slate-600">
+            <span className="font-semibold text-slate-900">
+              Texto extraído de los documentos.
+            </span>{' '}
+            La aplicación puede utilizar reconocimiento óptico de
+            caracteres (OCR) para extraer texto de las imágenes y facilitar
+            la búsqueda o consulta de su contenido. El texto procesado
+            dependerá de las funciones que utilices.
+          </p>
+        </li>
+
+        <li className="flex gap-4">
+          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+            04
+          </div>
+
+          <p className="m-0 leading-7 text-slate-600">
+            <span className="font-semibold text-slate-900">
+              Datos técnicos básicos.
+            </span>{' '}
+            Identificadores técnicos e información necesaria para el
+            funcionamiento, la seguridad y el diagnóstico de errores del
+            servicio, cuando corresponda.
+          </p>
+        </li>
+      </ul>
+    )
+  },
+
+  {
+    titulo: 'Cómo usamos los datos',
+    contenido: (
+      <p className="m-0 leading-7 text-slate-600">
+        Los datos se utilizan para proporcionar las funciones de ScanVault:
+        gestionar tu cuenta, capturar e importar documentos, procesar
+        imágenes mediante OCR, organizar y consultar archivos y, cuando
+        esté disponible, sincronizar documentos entre dispositivos. No
+        utilizamos el contenido de tus documentos con fines publicitarios.
+      </p>
+    )
+  },
+
+  {
+    titulo: 'Con quién compartimos los datos',
+    contenido: (
+      <p className="m-0 leading-7 text-slate-600">
+        Utilizamos servicios de Firebase (Google) para las funciones de
+        autenticación, base de datos y almacenamiento en la nube que
+        correspondan. La aplicación también puede utilizar bibliotecas de
+        reconocimiento de texto para procesar documentos. No vendemos tus
+        datos personales ni compartimos tus documentos con terceros con
+        fines publicitarios.
+      </p>
+    )
+  },
+
+  {
+    titulo: 'Conservación y eliminación',
+    contenido: (
+      <p className="m-0 leading-7 text-slate-600">
+        Conservamos los datos de tu cuenta y los archivos almacenados en
+        nuestros servicios mientras sean necesarios para prestar las
+        funcionalidades solicitadas. Puedes solicitar la eliminación de
+        tu cuenta y de los datos asociados contactando con nosotros. Los
+        archivos guardados exclusivamente en tu dispositivo pueden
+        requerir su eliminación desde la propia aplicación o desde el
+        dispositivo.
+      </p>
+    )
+  },
+
+  {
+    titulo: 'Permisos del dispositivo',
+    contenido: (
+      <p className="m-0 leading-7 text-slate-600">
+        ScanVault puede solicitar acceso a la cámara para capturar
+        documentos y a las fotografías o archivos del dispositivo para
+        importar documentos que selecciones. Estos permisos se utilizan
+        para las funciones solicitadas por el usuario.
+      </p>
+    )
+  },
+
+  {
+    titulo: 'Tus derechos',
+    contenido: (
+      <p className="m-0 leading-7 text-slate-600">
+        Puedes solicitar acceso, rectificación o eliminación de tus datos
+        personales, así como ejercer los demás derechos reconocidos por la
+        normativa aplicable, escribiendo a
+        alejandro.sanjim2000@gmail.com.
+      </p>
+    )
+  },
+
+  {
+    titulo: 'Cambios en esta política',
+    contenido: (
+      <p className="m-0 leading-7 text-slate-600">
+        Podemos actualizar esta política ocasionalmente. Cualquier cambio
+        se reflejará en esta misma página con la fecha de actualización
+        correspondiente.
+      </p>
+    )
+  }
+]
+
+},
+
+
 
   // Ejemplo de cómo añadir una futura app:
   //
