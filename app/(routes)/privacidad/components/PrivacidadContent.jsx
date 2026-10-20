@@ -932,6 +932,170 @@ secciones: [
 },
 
 
+  ludus: {
+    nombre: 'Ludus',
+    fechaActualizacion: '20 de octubre de 2026',
+
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <ul className="space-y-5">
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                01
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de cuenta.
+                </span>{' '}
+                Correo electrónico, nombre de usuario e información básica
+                del perfil necesarios para crear y gestionar tu cuenta en
+                Ludus.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                02
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Contenido generado por el usuario.
+                </span>{' '}
+                Publicaciones, comentarios, listas de videojuegos, tier lists
+                y otra información que decidas compartir en la aplicación.
+                También se incluye el contenido que publiques o guardes en
+                tu perfil, como tus juegos deseados, completados o abandonados.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                03
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de interacción social.
+                </span>{' '}
+                Información relacionada con los usuarios a los que sigues,
+                los seguidores de tu perfil, los me gusta y las interacciones
+                que realices con las publicaciones de otros usuarios.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                04
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos técnicos.
+                </span>{' '}
+                Identificadores técnicos e información básica de uso
+                necesarios para el funcionamiento, la seguridad y el
+                diagnóstico de errores de la aplicación, cuando corresponda.
+              </p>
+            </li>
+          </ul>
+        )
+      },
+
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Los datos recogidos se utilizan para proporcionar las
+            funcionalidades de Ludus, gestionar las cuentas y los perfiles,
+            guardar y mostrar las colecciones de videojuegos y las tier lists,
+            publicar contenido, permitir las interacciones sociales y mostrar
+            las publicaciones y perfiles de otros usuarios.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Contenido público y visibilidad',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Ludus permite compartir contenido relacionado con videojuegos
+            e interactuar con otros usuarios. Las publicaciones, comentarios,
+            tier lists y demás información que decidas publicar podrán ser
+            visibles para otros usuarios de la aplicación, según las
+            funcionalidades y opciones de visibilidad disponibles. Te
+            recomendamos no compartir información personal que no quieras
+            hacer pública.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Servicios de terceros',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Ludus puede utilizar servicios de terceros para proporcionar
+            funcionalidades como la autenticación, el almacenamiento de
+            información y la sincronización de datos. Estos proveedores
+            pueden procesar la información necesaria para prestar dichos
+            servicios de acuerdo con sus propias políticas de privacidad.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Conservamos los datos asociados a tu cuenta mientras sean
+            necesarios para proporcionar las funcionalidades de Ludus.
+            Puedes solicitar la eliminación de tu cuenta y de los datos
+            personales asociados contactando con nosotros. Determinados
+            contenidos o interacciones podrían dejar de estar disponibles
+            al eliminarse la cuenta o el contenido correspondiente.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Puedes solicitar acceso, rectificación o eliminación de tus
+            datos personales, así como ejercer los demás derechos reconocidos
+            por la normativa aplicable, escribiendo a{' '}
+            <span className="font-medium text-slate-900">
+              alejandro.sanjim2000@gmail.com
+            </span>.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Publicidad y seguimiento',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Los datos de Ludus se utilizan para proporcionar las
+            funcionalidades de la aplicación. El uso de datos con fines
+            publicitarios o de seguimiento dependerá de los servicios
+            integrados en la aplicación y de su configuración.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política de privacidad para reflejar
+            cambios en Ludus, en los servicios utilizados o en los requisitos
+            legales aplicables. Cualquier modificación se reflejará en esta
+            misma página indicando la fecha de actualización correspondiente.
+          </p>
+        )
+      }
+    ]
+  },
+
 
   // Ejemplo de cómo añadir una futura app:
   //
