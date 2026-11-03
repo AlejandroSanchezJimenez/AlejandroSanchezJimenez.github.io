@@ -1,5 +1,6 @@
 'use client'
 import { useState, useRef } from 'react'
+import { fijarProyectoHover } from '../hooks/useProyectoHover'
 
 const PREVIEW_W = 440
 const PREVIEW_H = 320
@@ -199,6 +200,10 @@ export default function Projects() {
         {Object.entries(projects).map(([key, project], index) => (
           <div
             key={key}
+            onPointerEnter={(e) => {
+              if (e.pointerType === 'mouse') fijarProyectoHover(key)
+            }}
+            onPointerLeave={() => fijarProyectoHover(null)}
             className={`relative overflow-hidden rounded-2xl shadow-2xl p-6 bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-500 transform transition duration-700 ease-out hover:scale-105 ${
               project.url ? 'cursor-pointer' : 'cursor-default'
             }`}

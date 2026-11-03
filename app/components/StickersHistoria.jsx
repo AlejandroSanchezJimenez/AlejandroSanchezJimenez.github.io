@@ -1,9 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSeccionActiva } from '../hooks/useSeccionActiva'
 import { useProgresoSeccion } from '../hooks/useProgresoSeccion'
 import { useMediaQuery } from '../hooks/useMediaQuery'
+import { useParallaxRaton } from '../hooks/useParallaxRaton'
+import { useProyectoHover } from '../hooks/useProyectoHover'
 
 const IDS = ['intro', 'about', 'tech', 'experience', 'projects', 'education']
 
@@ -18,6 +20,15 @@ const SECCION_PROGRESIVA = 'projects'
 const BORDE_ESCRITORIO = 6
 const BORDE_MOVIL = 4
 
+// Parallax con el ratón: píxeles de desplazamiento máximo con profundidad 1
+const AMPLITUD = 22
+// Profundidad por defecto según el orden del sticker dentro de su sección.
+// Más alto = más cerca = se mueve más. Puedes fijarla con el campo "prof" en un sticker.
+const PROFUNDIDADES = [1, 1.6, 0.7]
+
+// Cuánto crece un sticker cuando el ratón está sobre la tarjeta de su proyecto
+const ESCALA_HOVER = 1.1
+
 // Contorno blanco con drop-shadow encadenados (funciona también en Safari iOS)
 function filtroSticker(g) {
   return [
@@ -31,6 +42,7 @@ function filtroSticker(g) {
 
 // capa: 'frente' = por encima del contenido (para secciones con tarjetas opacas)
 //       sin capa = por detrás del contenido
+// proyecto: clave de la tarjeta en Projects.jsx; reacciona cuando el ratón está sobre ella
 const STICKERS = [
   // ── INTRO ──
   {
@@ -109,6 +121,7 @@ const STICKERS = [
   {
     seccion: 'projects',
     capa: 'frente',
+    proyecto: 'Ludus',
     src: '/stickers/ludus.png',
     alt: 'Ludus',
     pos: { top: '10%', right: '5%', width: 'clamp(140px, 17vw, 250px)' },
@@ -119,6 +132,7 @@ const STICKERS = [
   {
     seccion: 'projects',
     capa: 'frente',
+    proyecto: 'RaSearch',
     src: '/stickers/rasearch.png',
     alt: 'RaSearch',
     pos: { top: '40%', right: '8%', width: 'clamp(100px, 12vw, 180px)' },
@@ -129,6 +143,7 @@ const STICKERS = [
   {
     seccion: 'projects',
     capa: 'frente',
+    proyecto: 'Parkly',
     src: '/stickers/parkly.png',
     alt: 'Parkly',
     pos: { bottom: '8%', right: '6%', width: 'clamp(100px, 12vw, 180px)' },
@@ -168,9 +183,16 @@ export default function StickersHistoria() {
   const activa = useSeccionActiva(IDS)
   const indiceActivo = IDS.indexOf(activa)
   const progresoProyectos = useProgresoSeccion(SECCION_PROGRESIVA)
+  const proyectoHover = useProyectoHover()
 
   const esMovil = useMediaQuery('(max-width: 767px)')
   const reducirMovimiento = useMediaQuery('(prefers-reduced-motion: reduce)')
+  const punteroFino = useMediaQuery('(hover: hover) and (pointer: fine)')
+
+  // Parallax solo con ratón, en escritorio y si no se pide reducir movimiento
+  const parallaxActivo = punteroFino && !esMovil && !reducirMovimiento
+  const raizRef = useRef(null)
+  useParallaxRaton(raizRef, parallaxActivo)
 
   // Los stickers arrancan fuera de pantalla y entran en cuanto se monta el componente
   const [listo, setListo] = useState(false)
@@ -236,18 +258,39 @@ export default function StickersHistoria() {
 
     const visible = estado === 'visible'
 
+    // Parallax: desplazamiento e inclinación según --px / --py (posición del ratón)
+    const profundidad = s.prof ?? PROFUNDIDADES[orden % PROFUNDIDADES.length]
+    const k = AMPLITUD * profundidad
+    const estiloParallax = parallaxActivo
+      ? {
+          translate: `calc(var(--px, 0) * ${k}px) calc(var(--py, 0) * ${k}px)`,
+          rotate: `calc(var(--px, 0) * ${profundidad * 2}deg)`
+        }
+      : undefined
+
+    // Reacción a la tarjeta: crece con rebote elástico mientras el ratón está sobre ella
+    const resaltado =
+      !!s.proyecto && proyectoHover === s.proyecto && !reducirMovimiento
+
+    const estiloCapa2 = {
+      ...estiloParallax,
+      scale: resaltado ? ESCALA_HOVER : 1,
+      // La transición solo afecta a "scale"; el parallax se suaviza por su cuenta
+      transitionProperty: 'scale',
+      transitionDuration: '350ms',
+      transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+      willChange: 'translate, rotate, scale'
+    }
+
     const sticker = (
-      <img
+      // Capa 1: posición y entrada/salida con rebote
+      <div
         key={i}
-        src={s.src}
-        alt={s.alt}
-        draggable={false}
-        className="absolute h-auto will-change-transform"
+        className="absolute will-change-transform"
         style={{
           ...pos,
           transform,
           opacity: reducirMovimiento ? (visible ? 1 : 0) : esMovil ? 0.9 : 1,
-          filter: filtroSticker(esMovil ? BORDE_MOVIL : BORDE_ESCRITORIO),
           transitionProperty: 'transform, opacity',
           transitionDuration: reducirMovimiento ? '450ms' : '1100ms',
           transitionTimingFunction: reducirMovimiento
@@ -255,7 +298,31 @@ export default function StickersHistoria() {
             : 'cubic-bezier(0.34, 1.56, 0.64, 1)',
           transitionDelay: `${s.delay}ms`
         }}
-      />
+      >
+        {/* Capa 2: parallax con el ratón + crecimiento al hacer hover en la tarjeta */}
+        <div style={estiloCapa2}>
+          {/* Capa 3: flotación continua (pausada mientras el sticker no se ve) */}
+          <div
+            className="sticker-flota"
+            style={{
+              '--dur': `${4 + (i % 3)}s`, // cada uno con su ritmo
+              '--ret': `${(i % 4) * -0.7}s`, // retraso negativo: no van sincronizados
+              animationPlayState: visible ? 'running' : 'paused'
+            }}
+          >
+            {/* Capa 4: la imagen con su borde blanco */}
+            <img
+              src={s.src}
+              alt={s.alt}
+              draggable={false}
+              className="block h-auto w-full"
+              style={{
+                filter: filtroSticker(esMovil ? BORDE_MOVIL : BORDE_ESCRITORIO)
+              }}
+            />
+          </div>
+        </div>
+      </div>
     )
 
     const destino = enFrente ? delante : detras
@@ -263,7 +330,8 @@ export default function StickersHistoria() {
   })
 
   return (
-    <>
+    // Este div no tiene tamaño ni z-index: solo sirve para que las dos capas hereden --px y --py
+    <div ref={raizRef}>
       {/* Capa de fondo: por detrás del contenido */}
       <div
         aria-hidden
@@ -279,6 +347,6 @@ export default function StickersHistoria() {
       >
         {delante}
       </div>
-    </>
+    </div>
   )
 }

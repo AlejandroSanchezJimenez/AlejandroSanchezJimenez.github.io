@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Section from './components/Section'
 import Footer from './components/Footer'
 import StickersHistoria from './components/StickersHistoria'
+import PistaScroll from './components/PistaScroll'
 
 export default function HomePage() {
   const [revelado, setRevelado] = useState(false)
@@ -22,6 +23,9 @@ export default function HomePage() {
       <main className="relative">
         {/* Los stickers entran cuando las franjas empiezan a abrirse */}
         {revelado && <StickersHistoria />}
+
+        {/* Pista de scroll: aparece al terminar el hero y se va al empezar a bajar */}
+        {heroFinished && <PistaScroll />}
 
         <div className="relative z-10">
           <Section id="intro" title="Fullstack Developer">
