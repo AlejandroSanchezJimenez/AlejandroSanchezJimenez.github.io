@@ -12,10 +12,10 @@ export const projects = {
   Ludus: {
     titulo: 'Ludus',
     subtitulo:
-      'App para localizar sonidos, grabarlos y compartirlos con la comunidad',
+      'App social para compartir y descubrir videojuegos y experiencias de juego',
     ano: '2026',
     descripcion:
-      'Aplicación móvil que busca crear una comunidad y compartir sonidos del mundo. Permite a los usuarios localizar sonidos en su entorno, grabarlos y compartirlos con otros miembros de la comunidad. La app ofrece funcionalidades de geolocalización, categorización de sonidos y un feed interactivo para explorar y descubrir nuevos sonidos. Desarrollada con Flutter, está en proceso de preparación para su lanzamiento en App Store.',
+      'Aplicación móvil social que permite guardar un listado de los videojuegos que vayas jugando, organizarlos por niveles, hablar con tus amigos de ellos y crear tier lists a tu gusto. Desarrollada con Flutter, está en proceso de preparación para su lanzamiento en App Store.',
     appStore: '',
     img: []
   },
@@ -35,7 +35,7 @@ export const projects = {
       'App para gestionar documentos escaneados y organizarlos en carpetas',
     ano: '2026',
     descripcion:
-      'Aplicación móvil centrada en la gestión de documentos escaneados, permitiendo a los usuarios organizar sus archivos en carpetas y subcarpetas. La app ofrece funcionalidades de escaneo, almacenamiento seguro y búsqueda eficiente de documentos. Desarrollada con Flutter, está en proceso de preparación para su lanzamiento en App Store.',
+      'Aplicación móvil centrada en la gestión de documentos escaneados, permitiendo a los usuarios organizar sus archivos en carpetas y subcarpetas. La app ofrece funcionalidades de escaneo, almacenamiento seguro y búsqueda eficiente de documentos.',
     appStore: 'https://apps.apple.com/es/app/scanvault/id6819661781',
     img: []
   },
@@ -64,7 +64,7 @@ export const projects = {
       'Juego arcade roguelite de conseguir puntos y monedas hasta llegar al nido final ',
     ano: '2026',
     descripcion:
-      'CrowFall es un juego arcade roguelite donde los jugadores manejan a un cuervo que salta entre una ciudad en ruinas para llegar a su nido. Utiliza Flutter para su desarrollo y ofrece una experiencia de juego dinámica y desafiante. Actualmente en desarrollo, preparando su ficha para App Store.',
+      'CrowFall es un juego arcade roguelite donde los jugadores manejan a un cuervo que salta entre una ciudad en ruinas para llegar a su nido. Utiliza Flutter para su desarrollo y ofrece una experiencia de juego dinámica y desafiante.',
     appStore: 'https://apps.apple.com/es/app/crowfall/id6811041035',
     img: []
   },
@@ -73,7 +73,7 @@ export const projects = {
     subtitulo: 'App de catálogo y búsqueda de jeroglíficos egipcios',
     ano: '2026',
     descripcion:
-      'RaSearch es una aplicación Flutter para catalogar y buscar jeroglíficos egipcios. Utiliza Firebase y Firestore para almacenar los datos, con una búsqueda universal por código Gardiner, Unicode, símbolo o texto libre, organizada por categorías Gardiner. Incluye caché local con Hive, sistema de favoritos e historial de búsquedas recientes guardado por dispositivo sin necesidad de login, copia de símbolos al portapapeles y la opción de compartir la ficha de cada jeroglífico como PDF. Actualmente en desarrollo, preparando su ficha para App Store.',
+      'RaSearch es una aplicación Flutter para catalogar y buscar jeroglíficos egipcios. Utiliza Firebase y Firestore para almacenar los datos, con una búsqueda universal por código Gardiner, Unicode, símbolo o texto libre, organizada por categorías Gardiner. Incluye caché local con Hive, sistema de favoritos e historial de búsquedas recientes guardado por dispositivo sin necesidad de login, copia de símbolos al portapapeles y la opción de compartir la ficha de cada jeroglífico como PDF.',
     appStore: 'https://apps.apple.com/es/app/rasearch/id6809452019',
     img: []
   },
@@ -84,7 +84,7 @@ export const projects = {
     url: 'https://alejandrosanchezjimenez.github.io/TotallyStyled/',
     ano: '2026',
     descripcion:
-      'TotallyStyled nace del amor y de la necesidad. Mi pareja necesitaba una aplicación para guardar sus outfits, pero no encontró una que se ajustara a sus necesidades. Fue entonces que decidí crear una, y con la ayuda de Clueless (película icónica) en un par de días le di solución. Está creado en Flutter, utiliza Firebase y Firestore para almacenar los datos, y utiliza Flutter UI para la interfaz. Actualmente en desarrollo, con funcionalidades básicas implementadas y pruebas en curso.',
+      'TotallyStyled nace del amor y de la necesidad. Mi pareja necesitaba una aplicación para guardar sus outfits, pero no encontró una que se ajustara a sus necesidades. Fue entonces que decidí crear una, y con la ayuda de Clueless (película icónica) en un par de días le di solución. Está creado en Flutter, utiliza Firebase y Firestore para almacenar los datos, y utiliza Flutter UI para la interfaz.',
     appStore: 'https://apps.apple.com/es/app/totally-styled/id6808181347',
     img: []
   },
@@ -94,7 +94,7 @@ export const projects = {
     url: 'https://alejandrosanchezjimenez.github.io/mysyncedlist/',
     ano: '2026',
     descripcion:
-      'MySyncedList es una aplicación para sincronizar listas de tareas entre dispositivos. Utiliza flutter, se creó como una necesidad personal. Permite crear listas, compartirlas con otros usuarios y sincronizarlas en tiempo real. Actualmente en desarrollo, con funcionalidades básicas implementadas y pruebas en curso.',
+      'MySyncedList es una aplicación para sincronizar listas de tareas entre dispositivos. Utiliza flutter, se creó como una necesidad personal. Permite crear listas, compartirlas con otros usuarios y sincronizarlas en tiempo real.',
     appStore: 'https://apps.apple.com/es/app/mysyncedlist/id6807769925',
     img: []
   },
@@ -114,21 +114,21 @@ export const projects = {
       './media/pokeclick/4.PNG'
     ]
   },
-  Neosif: {
-    titulo: 'Neosif',
-    subtitulo: 'Proyecto profesional en desarrollo',
-    ano: '2025',
-    descripcion:
-      'Neosif es una aplicación web profesional enfocada en la normativa VERI*FACTU, desarrollada en React JS. Utiliza más de 40 componentes reutilizables y gestiona más de 50 clientes con sus empleados. Desarrollo en entorno profesional manteniendo confidencialidad.',
-    appStore: '',
-    img: []
-  },
+  // Neosif: {
+  //   titulo: 'Neosif',
+  //   subtitulo: 'Proyecto profesional en desarrollo',
+  //   ano: '2025',
+  //   descripcion:
+  //     'Neosif es una aplicación web profesional enfocada en la normativa VERI*FACTU, desarrollada en React JS. Utiliza más de 40 componentes reutilizables y gestiona más de 50 clientes con sus empleados. Desarrollo en entorno profesional manteniendo confidencialidad.',
+  //   appStore: '',
+  //   img: []
+  // },
   Parkly: {
     titulo: 'Parkly',
     subtitulo: 'App móvil para gestionar parkings de moto',
     ano: '2024-2025',
     descripcion:
-      'Parkly es una app móvil para localizar parkings, reservar plazas y gestionar pagos. Desarrollada con React Native y Firebase. Actualmente parada por falta de tiempo.',
+      'Parkly es una app móvil para localizar parkings, valorar y guardar tus sitios favoritos. Desarrollada con Flutter y Firebase.',
     appStore: 'https://apps.apple.com/es/app/parkly/id6813046542',
     img: []
   },

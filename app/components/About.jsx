@@ -40,11 +40,11 @@ export default function About() {
 
         <div className="w-full md:w-1/2 text-base sm:text-lg">
           <p>
-            Tengo {age} años y llevo programando 3, de los cuales 1 ha sido
-            trabajando profesionalmente en una empresa de Málaga. Nací en Jaén y
-            allí fue donde aprendí a programar y a diseñar interfaces. Me gusta
-            trabajar en proyectos que combinan buen diseño y experiencia de
-            usuario.
+            Tengo {age} años y llevo programando 4 años, de los cuales 2 han
+            sido trabajando profesionalmente en una empresa de Málaga. Nací en
+            Jaén y allí fue donde aprendí a programar y a diseñar interfaces. Me
+            gusta trabajar en proyectos que combinan buen diseño y experiencia
+            de usuario.
           </p>
           <p className="mt-4">
             Me encanta dejar volar mi creatividad y ver como el código cobra
