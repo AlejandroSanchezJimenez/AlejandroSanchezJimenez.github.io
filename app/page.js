@@ -6,6 +6,7 @@ import Section from './components/Section'
 import Footer from './components/Footer'
 import StickersHistoria from './components/StickersHistoria'
 import PistaScroll from './components/PistaScroll'
+import NavegacionCapitulos from './components/NavegacionCapitulos'
 
 export default function HomePage() {
   const [revelado, setRevelado] = useState(false)
@@ -26,7 +27,7 @@ export default function HomePage() {
 
         {/* Pista de scroll: aparece al terminar el hero y se va al empezar a bajar */}
         {heroFinished && <PistaScroll />}
-
+        {heroFinished && <NavegacionCapitulos />}
         <div className="relative z-10">
           <Section id="intro" title="Fullstack Developer">
             <p className="w-full md:w-2/5 text-gray-300">

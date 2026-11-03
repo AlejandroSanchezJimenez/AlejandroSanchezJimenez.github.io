@@ -1,3 +1,5 @@
+import ContadoresSobreMi from './ContadoresSobreMi'
+
 export default function About() {
   const birthDate = new Date('2000-10-17')
 
@@ -53,6 +55,7 @@ export default function About() {
           </p>
         </div>
       </div>
+      <ContadoresSobreMi />
     </div>
   )
 }
