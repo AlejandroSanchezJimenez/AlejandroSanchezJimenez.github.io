@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Hero from './components/Hero'
 import Section from './components/Section'
 import Footer from './components/Footer'
+import StickersHistoria from './components/StickersHistoria'
 
 export default function HomePage() {
   const [heroFinished, setHeroFinished] = useState(false)
@@ -12,23 +13,29 @@ export default function HomePage() {
     <>
       {!heroFinished && <Hero onFinish={() => setHeroFinished(true)} />}
       {heroFinished && (
-        <main>
-          <Section id="intro" title="Fullstack Developer">
-            <p className="w-full md:w-2/5 text-gray-300">
-              ¡Hola! Soy un desarrollador fullstack especializado en React,
-              Node.js, Next.js, TypeScript y Flutter. Me apasiona crear
-              interfaces modernas, eficientes y accesibles. Estoy muy interesado
-              en aprender y desarrollar nuevas tecnologías que sean útiles para
-              mi trabajo y amigables para el usuario.
-            </p>
-            <br />
-          </Section>
-          <Section id="about" title="Sobre mí" />
-          <Section id="tech" title="Stack Tecnológico" />
-          <Section id="experience" title="Experiencia" />
-          <Section id="projects" title="Formación" />
-          <Section id="education" title="Educacion" />
-          <Footer />
+        <main className="relative">
+          {/* Capa fija de stickers */}
+          <StickersHistoria />
+
+          {/* Contenido por encima */}
+          <div className="relative z-10">
+            <Section id="intro" title="Fullstack Developer">
+              <p className="w-full md:w-2/5 text-gray-300">
+                ¡Hola! Soy un desarrollador fullstack especializado en React,
+                Node.js, Next.js, TypeScript y Flutter. Me apasiona crear
+                interfaces modernas, eficientes y accesibles. Estoy muy
+                interesado en aprender y desarrollar nuevas tecnologías que sean
+                útiles para mi trabajo y amigables para el usuario.
+              </p>
+              <br />
+            </Section>
+            <Section id="about" title="Sobre mí" />
+            <Section id="tech" title="Stack Tecnológico" />
+            <Section id="experience" title="Experiencia" />
+            <Section id="projects" title="Formación" />
+            <Section id="education" title="Educacion" />
+            <Footer />
+          </div>
         </main>
       )}
     </>

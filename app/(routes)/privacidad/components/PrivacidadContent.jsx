@@ -152,7 +152,7 @@ const PRIVACY_POLICIES = {
                 </span>{' '}
                 Fotografías de prendas de ropa y accesorios que subas a la app,
                 así como las combinaciones de outfits que crees y guardes. Las
-                imágenes se almacenan a través de Cloudinary.
+                imágenes se almacenan a través de Firebase Storage.
               </p>
             </li>
 
@@ -189,9 +189,26 @@ const PRIVACY_POLICIES = {
         titulo: 'Con quién compartimos los datos',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            Utilizamos Cloudinary como proveedor de almacenamiento y
-            procesamiento de imágenes. No vendemos ni compartimos tus datos con
-            terceros con fines publicitarios.
+            Utilizamos Firebase Storage, proporcionado por Google, como
+            proveedor de almacenamiento de las imágenes que subes a la app. No
+            vendemos ni compartimos tus datos con terceros con fines
+            publicitarios.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Pagos y suscripciones',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Determinadas funcionalidades de TotallyStyled se ofrecen a través
+            de suscripciones de pago. El cobro se gestiona íntegramente a
+            través de la tienda de aplicaciones desde la que descargaste la
+            app (App Store o Google Play), que actúa como responsable del
+            proceso de pago. TotallyStyled no recoge, procesa ni almacena
+            datos de tarjetas ni ninguna otra información de pago: esa
+            información se tratará exclusivamente por la tienda, conforme a su
+            propia política de privacidad.
           </p>
         )
       },

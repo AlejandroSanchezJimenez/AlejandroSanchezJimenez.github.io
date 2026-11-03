@@ -31,13 +31,63 @@ export default function Projects() {
   const handleLeave = () => setPreview(null)
 
   const projects = {
+    BajoControl: {
+      titulo: 'BajoControl',
+      subtitulo:
+        'App para centralizar los datos de distintos servicios para desarrolladores',
+      ano: '2026',
+      descripcion:
+        'Aplicación móvil creada por y para desarrolladores, centraliza plataformas de subida de apps como Play Store o App Store, servicios de anuncios como AdMob, de bases de datos como Firebase entre otros. Permite a los desarrolladores tener un control centralizado de sus aplicaciones y servicios, facilitando la gestión y el seguimiento de métricas clave. Desarrollada con Flutter, está en proceso de preparación para su lanzamiento en App Store.',
+      appStore: '',
+      img: []
+    },
+    Ludus: {
+      titulo: 'Ludus',
+      subtitulo:
+        'App para localizar sonidos, grabarlos y compartirlos con la comunidad',
+      ano: '2026',
+      descripcion:
+        'Aplicación móvil que busca crear una comunidad y compartir sonidos del mundo. Permite a los usuarios localizar sonidos en su entorno, grabarlos y compartirlos con otros miembros de la comunidad. La app ofrece funcionalidades de geolocalización, categorización de sonidos y un feed interactivo para explorar y descubrir nuevos sonidos. Desarrollada con Flutter, está en proceso de preparación para su lanzamiento en App Store.',
+      appStore: '',
+      img: []
+    },
+    EchoTrail: {
+      titulo: 'EchoTrail',
+      subtitulo:
+        'App para localizar sonidos, grabarlos y compartirlos con la comunidad',
+      ano: '2026',
+      descripcion:
+        'Aplicación móvil que busca crear una comunidad y compartir sonidos del mundo. Permite a los usuarios localizar sonidos en su entorno, grabarlos y compartirlos con otros miembros de la comunidad. La app ofrece funcionalidades de geolocalización, categorización de sonidos y un feed interactivo para explorar y descubrir nuevos sonidos. Desarrollada con Flutter, está en proceso de preparación para su lanzamiento en App Store.',
+      appStore: '',
+      img: []
+    },
+    ScanVault: {
+      titulo: 'ScanVault',
+      subtitulo:
+        'App para gestionar documentos escaneados y organizarlos en carpetas',
+      ano: '2026',
+      descripcion:
+        'Aplicación móvil centrada en la gestión de documentos escaneados, permitiendo a los usuarios organizar sus archivos en carpetas y subcarpetas. La app ofrece funcionalidades de escaneo, almacenamiento seguro y búsqueda eficiente de documentos. Desarrollada con Flutter, está en proceso de preparación para su lanzamiento en App Store.',
+      appStore: 'https://apps.apple.com/es/app/scanvault/id6819661781',
+      img: []
+    },
+    Kineo: {
+      titulo: 'Kineo',
+      subtitulo:
+        'App para hacer ejercicio diario enfocado en enfermedades concretas',
+      ano: '2026',
+      descripcion:
+        'Aplicación móvil centrada en la salud y el bienestar, diseñada para ayudar a los usuarios a realizar ejercicios diarios adaptados a enfermedades específicas. La app ofrece rutinas personalizadas, seguimiento de progreso y recordatorios para fomentar la constancia en la actividad física. Enfocada principalmente en la oncología, la aplicación busca mejorar la calidad de vida de los pacientes mediante ejercicios seguros y efectivos, adaptados a sus necesidades individuales. Con datos proporcionados por profesionales graduados en Ciencias de la Actividad Física y el Deporte, la app garantiza que los ejercicios sean apropiados y beneficiosos para cada condición médica. Utiliza Flutter para su desarrollo y está en proceso de preparación para su lanzamiento en App Store.',
+      appStore: '',
+      img: []
+    },
     'Pastillero+': {
       titulo: 'Pastillero+',
       subtitulo: 'App para gestionar medicamentos y recordatorios',
       ano: '2026',
       descripcion:
         'Aplicación móvil centrada en la organización y seguimiento de tratamientos médicos. Permite crear medicamentos, configurar diferentes dosis y horarios y generar recordatorios automáticos para cada toma. El sistema gestiona las dosis de forma individual, facilitando el seguimiento de tratamientos con varias tomas diarias y permitiendo consultar y administrar las dosis programadas. La aplicación funciona de forma completamente local, por lo que los datos y recordatorios permanecen disponibles sin conexión a Internet.',
-      appStore: '',
+      appStore: 'https://apps.apple.com/es/app/pastillero/id6815984918',
       img: []
     },
     CrowFall: {
@@ -47,7 +97,7 @@ export default function Projects() {
       ano: '2026',
       descripcion:
         'CrowFall es un juego arcade roguelite donde los jugadores manejan a un cuervo que salta entre una ciudad en ruinas para llegar a su nido. Utiliza Flutter para su desarrollo y ofrece una experiencia de juego dinámica y desafiante. Actualmente en desarrollo, preparando su ficha para App Store.',
-      appStore: '',
+      appStore: 'https://apps.apple.com/es/app/crowfall/id6811041035',
       img: []
     },
     RaSearch: {
