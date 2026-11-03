@@ -12,8 +12,8 @@ export function useSeccionActiva(ids) {
           if (e.isIntersecting) setActiva(e.target.id)
         })
       },
-      // Solo cuenta la franja central de la pantalla
-      { rootMargin: '-50% 0px -50% 0px' }
+      // Franja del 10% en el centro (más fiable en Safari iOS que una línea de 0px)
+      { rootMargin: '-45% 0px -45% 0px' }
     )
 
     ids.forEach((id) => {

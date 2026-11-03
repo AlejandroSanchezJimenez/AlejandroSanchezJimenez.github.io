@@ -1,101 +1,140 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
-export default function Hero({ onFinish }) {
-  const name = 'ASANJIMDEV'
-  const [letters, setLetters] = useState(
-    name.split('').map((char) => ({ char, visible: false }))
-  )
-  const [phase, setPhase] = useState('typing') // typing | fadeName | stripes
+const NOMBRE = 'ASANJIMDEV'
+const LETRAS = NOMBRE.split('')
+const FRANJAS = 5
 
-  // Animación de letras desde abajo
+// Tiempos en ms
+const T_INICIO = 120 // deja pintar el estado inicial antes de animar
+const T_ESPERA = 2000 // desde que entran las letras hasta que empieza la salida
+const T_REVELAR = 450 // tras empezar la salida, avisa a la página para montar los stickers
+const T_FIN = 1500 // tras empezar la salida, se quita el hero (ya es invisible)
+
+const EASE_ENTRADA = 'cubic-bezier(0.22, 1, 0.36, 1)'
+const EASE_SALIDA = 'cubic-bezier(0.76, 0, 0.24, 1)'
+
+export default function Hero({ onReveal, onFinish }) {
+  const [fase, setFase] = useState('inicio') // inicio | entrada | salida
+  const reducido = useMediaQuery('(prefers-reduced-motion: reduce)')
+
+  // Guardamos los callbacks en una ref para que la línea de tiempo no se reinicie
+  const callbacks = useRef({ onReveal, onFinish })
   useEffect(() => {
-    if (phase !== 'typing') return
+    callbacks.current = { onReveal, onFinish }
+  })
 
-    letters.forEach((_, i) => {
-      setTimeout(() => {
-        setLetters((prev) =>
-          prev.map((l, index) => (index === i ? { ...l, visible: true } : l))
-        )
-      }, i * 100)
-    })
-
-    const totalTime = letters.length * 100 + 500
-    const timer = setTimeout(() => {
-      setPhase('fadeName')
-    }, totalTime)
-
-    return () => clearTimeout(timer)
-  }, [phase])
-
-  // Fade out del nombre
+  // Bloquea el scroll de la página mientras dura el hero
   useEffect(() => {
-    if (phase !== 'fadeName') return
+    const previo = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.scrollTo(0, 0)
+    return () => {
+      document.body.style.overflow = previo
+    }
+  }, [])
 
-    const fadeTimer = setTimeout(() => {
-      setLetters((prev) => prev.map((l) => ({ ...l, visible: false })))
-      setPhase('stripes')
-    }, 500)
-
-    return () => clearTimeout(fadeTimer)
-  }, [phase])
-
-  // Animación de franjas
+  // Línea de tiempo única (solo timeouts, sin setState síncrono)
   useEffect(() => {
-    if (phase !== 'stripes') return
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const inicioSalida = T_INICIO + (reduce ? 800 : T_ESPERA)
 
-    const stripes = document.querySelectorAll('.hero-stripe')
-    // Invertimos el orden para animar de derecha a izquierda
-    Array.from(stripes)
-      .reverse()
-      .forEach((stripe, i) => {
-        setTimeout(() => {
-          stripe.classList.add('translate-y-full', 'opacity-0')
-        }, i * 200)
-      })
+    const timers = [
+      setTimeout(() => setFase('entrada'), T_INICIO),
+      setTimeout(() => setFase('salida'), inicioSalida),
+      setTimeout(
+        () => callbacks.current.onReveal?.(),
+        inicioSalida + T_REVELAR
+      ),
+      setTimeout(() => callbacks.current.onFinish?.(), inicioSalida + T_FIN)
+    ]
 
-    const endTimer = setTimeout(() => {
-      onFinish()
-    }, 5 * 200 + 800)
+    return () => timers.forEach(clearTimeout)
+  }, [])
 
-    return () => clearTimeout(endTimer)
-  }, [phase, onFinish])
+  const estiloLetra = (i) => {
+    if (fase === 'inicio') {
+      return {
+        transform: reducido ? 'none' : 'translateY(110%)',
+        opacity: 0
+      }
+    }
+    if (fase === 'entrada') {
+      return {
+        transform: 'translateY(0)',
+        opacity: 1,
+        transition: reducido
+          ? 'opacity 500ms ease'
+          : `transform 700ms ${EASE_ENTRADA} ${i * 60}ms, opacity 500ms ease ${i * 60}ms`
+      }
+    }
+    // salida
+    return {
+      transform: reducido ? 'none' : 'translateY(-110%)',
+      opacity: 0,
+      transition: reducido
+        ? 'opacity 400ms ease'
+        : `transform 600ms ${EASE_SALIDA} ${i * 30}ms, opacity 400ms ease ${i * 30}ms`
+    }
+  }
+
+  const estiloFranja = (i) => {
+    const salio = fase === 'salida'
+    return {
+      left: `${i * 20}%`,
+      width: 'calc(20% + 1px)', // el +1px evita líneas finas entre franjas
+      transform: reducido
+        ? 'none'
+        : salio
+          ? 'translateY(-101%)'
+          : 'translateY(0)',
+      opacity: reducido && salio ? 0 : 1,
+      transition: reducido
+        ? 'opacity 500ms ease'
+        : `transform 900ms ${EASE_SALIDA} ${i * 90}ms`,
+      willChange: 'transform'
+    }
+  }
 
   return (
-    <div className='fixed inset-0 z-50 overflow-hidden flex justify-center items-center'>
-      {/* Franjas verticales */}
-      {phase === 'stripes' &&
-        [0, 1, 2, 3, 4].map((i) => (
-          <div
+    <div
+      className={`fixed inset-0 z-50 flex touch-none items-center justify-center overflow-hidden ${
+        fase === 'salida' ? 'pointer-events-none' : ''
+      }`}
+    >
+      {/* Franjas: cubren la pantalla y al final se deslizan hacia arriba, una tras otra */}
+      {Array.from({ length: FRANJAS }).map((_, i) => (
+        <div
+          key={i}
+          className="absolute top-0 h-full bg-gradient-to-tr from-purple-900 via-indigo-800 to-purple-700"
+          style={estiloFranja(i)}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500 to-transparent" />
+        </div>
+      ))}
+
+      {/* Nombre: cada letra sube desde una máscara y sale hacia arriba */}
+      <h1
+        aria-label={NOMBRE}
+        className="relative flex justify-center whitespace-nowrap text-[clamp(2.25rem,11vw,4.5rem)] font-extrabold leading-none text-white"
+      >
+        {LETRAS.map((letra, i) => (
+          <span
             key={i}
-            className='hero-stripe w-1/5 h-full bg-gradient-to-tr from-purple-900 via-indigo-800 to-purple-700 absolute transition-transform duration-700 ease-out'
-            style={{ left: `${i * 20}%` }}
-          ></div>
-        ))}
-
-      {/* Fondo liso inicial */}
-      {phase !== 'stripes' && (
-        <div className='absolute inset-0 bg-gradient-to-tr from-purple-900 via-indigo-800 to-purple-700'></div>
-      )}
-
-      {/* Nombre */}
-      {phase !== 'stripes' && (
-        <h1 className='relative text-5xl md:text-7xl font-extrabold text-white flex flex-wrap justify-center'>
-          {letters.map((l, i) => (
+            aria-hidden
+            className="inline-block overflow-hidden py-2"
+          >
             <span
-              key={i}
-              className={`inline-block transform transition-transform duration-500 ${
-                l.visible
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-10 opacity-0'
-              }`}
+              className="inline-block will-change-transform"
+              style={estiloLetra(i)}
             >
-              {l.char === ' ' ? '\u00A0' : l.char}
+              {letra}
             </span>
-          ))}
-        </h1>
-      )}
+          </span>
+        ))}
+      </h1>
     </div>
   )
 }

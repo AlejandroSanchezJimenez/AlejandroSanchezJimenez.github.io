@@ -7,37 +7,41 @@ import Footer from './components/Footer'
 import StickersHistoria from './components/StickersHistoria'
 
 export default function HomePage() {
+  const [revelado, setRevelado] = useState(false)
   const [heroFinished, setHeroFinished] = useState(false)
 
   return (
     <>
-      {!heroFinished && <Hero onFinish={() => setHeroFinished(true)} />}
-      {heroFinished && (
-        <main className="relative">
-          {/* Capa fija de stickers */}
-          <StickersHistoria />
-
-          {/* Contenido por encima */}
-          <div className="relative z-10">
-            <Section id="intro" title="Fullstack Developer">
-              <p className="w-full md:w-2/5 text-gray-300">
-                ¡Hola! Soy un desarrollador fullstack especializado en React,
-                Node.js, Next.js, TypeScript y Flutter. Me apasiona crear
-                interfaces modernas, eficientes y accesibles. Estoy muy
-                interesado en aprender y desarrollar nuevas tecnologías que sean
-                útiles para mi trabajo y amigables para el usuario.
-              </p>
-              <br />
-            </Section>
-            <Section id="about" title="Sobre mí" />
-            <Section id="tech" title="Stack Tecnológico" />
-            <Section id="experience" title="Experiencia" />
-            <Section id="projects" title="Formación" />
-            <Section id="education" title="Educacion" />
-            <Footer />
-          </div>
-        </main>
+      {!heroFinished && (
+        <Hero
+          onReveal={() => setRevelado(true)}
+          onFinish={() => setHeroFinished(true)}
+        />
       )}
+
+      <main className="relative">
+        {/* Los stickers entran cuando las franjas empiezan a abrirse */}
+        {revelado && <StickersHistoria />}
+
+        <div className="relative z-10">
+          <Section id="intro" title="Fullstack Developer">
+            <p className="w-full md:w-2/5 text-gray-300">
+              ¡Hola! Soy un desarrollador fullstack especializado en React,
+              Node.js, Next.js, TypeScript y Flutter. Me apasiona crear
+              interfaces modernas, eficientes y accesibles. Estoy muy interesado
+              en aprender y desarrollar nuevas tecnologías que sean útiles para
+              mi trabajo y amigables para el usuario.
+            </p>
+            <br />
+          </Section>
+          <Section id="about" title="Sobre mí" />
+          <Section id="tech" title="Stack Tecnológico" />
+          <Section id="experience" title="Experiencia" />
+          <Section id="projects" title="Proyectos" />
+          <Section id="education" title="Formación" />
+          <Footer />
+        </div>
+      </main>
     </>
   )
 }
