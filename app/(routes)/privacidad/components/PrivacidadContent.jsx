@@ -201,14 +201,14 @@ const PRIVACY_POLICIES = {
         titulo: 'Pagos y suscripciones',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            Determinadas funcionalidades de TotallyStyled se ofrecen a través
-            de suscripciones de pago. El cobro se gestiona íntegramente a
-            través de la tienda de aplicaciones desde la que descargaste la
-            app (App Store o Google Play), que actúa como responsable del
-            proceso de pago. TotallyStyled no recoge, procesa ni almacena
-            datos de tarjetas ni ninguna otra información de pago: esa
-            información se tratará exclusivamente por la tienda, conforme a su
-            propia política de privacidad.
+            Determinadas funcionalidades de TotallyStyled se ofrecen a través de
+            suscripciones de pago. El cobro se gestiona íntegramente a través de
+            la tienda de aplicaciones desde la que descargaste la app (App Store
+            o Google Play), que actúa como responsable del proceso de pago.
+            TotallyStyled no recoge, procesa ni almacena datos de tarjetas ni
+            ninguna otra información de pago: esa información se tratará
+            exclusivamente por la tienda, conforme a su propia política de
+            privacidad.
           </p>
         )
       },
@@ -641,313 +641,310 @@ const PRIVACY_POLICIES = {
     ]
   },
 
-pastillero: {
-  nombre: 'Pastillero+',
-  fechaActualizacion: '25 de septiembre de 2026',
+  pastillero: {
+    nombre: 'Pastillero+',
+    fechaActualizacion: '25 de septiembre de 2026',
 
-  secciones: [
-    {
-      titulo: 'Datos que recogemos',
-      contenido: (
-        <ul className="space-y-5">
-          <li className="flex gap-4">
-            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
-              01
-            </div>
-            <p className="m-0 leading-7 text-slate-600">
-              <span className="font-semibold text-slate-900">
-                Datos personales.
-              </span>{' '}
-              Pastillero+ no requiere crear una cuenta ni iniciar sesión y no
-              solicita datos personales para utilizar sus funcionalidades.
-            </p>
-          </li>
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <ul className="space-y-5">
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                01
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos personales.
+                </span>{' '}
+                Pastillero+ no requiere crear una cuenta ni iniciar sesión y no
+                solicita datos personales para utilizar sus funcionalidades.
+              </p>
+            </li>
 
-          <li className="flex gap-4">
-            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
-              02
-            </div>
-            <p className="m-0 leading-7 text-slate-600">
-              <span className="font-semibold text-slate-900">
-                Información de medicamentos.
-              </span>{' '}
-              Los medicamentos, dosis, horarios y demás información que
-              introduzcas en la aplicación se almacenan localmente en tu
-              dispositivo.
-            </p>
-          </li>
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                02
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Información de medicamentos.
+                </span>{' '}
+                Los medicamentos, dosis, horarios y demás información que
+                introduzcas en la aplicación se almacenan localmente en tu
+                dispositivo.
+              </p>
+            </li>
 
-          <li className="flex gap-4">
-            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
-              03
-            </div>
-            <p className="m-0 leading-7 text-slate-600">
-              <span className="font-semibold text-slate-900">
-                Datos de uso de la aplicación.
-              </span>{' '}
-              Pastillero+ no recopila ni envía a servidores información personal
-              relacionada con el uso de la aplicación.
-            </p>
-          </li>
-        </ul>
-      )
-    },
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                03
+              </div>
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de uso de la aplicación.
+                </span>{' '}
+                Pastillero+ no recopila ni envía a servidores información
+                personal relacionada con el uso de la aplicación.
+              </p>
+            </li>
+          </ul>
+        )
+      },
 
-    {
-      titulo: 'Cómo usamos los datos',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          La información introducida en Pastillero+ se utiliza exclusivamente
-          para proporcionar las funcionalidades de la aplicación, como
-          organizar medicamentos, configurar dosis y horarios y mostrar
-          recordatorios de las tomas programadas.
-        </p>
-      )
-    },
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            La información introducida en Pastillero+ se utiliza exclusivamente
+            para proporcionar las funcionalidades de la aplicación, como
+            organizar medicamentos, configurar dosis y horarios y mostrar
+            recordatorios de las tomas programadas.
+          </p>
+        )
+      },
 
-    {
-      titulo: 'Almacenamiento de datos',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          Toda la información introducida por el usuario se almacena
-          localmente en el dispositivo. Pastillero+ no utiliza servidores,
-          cuentas de usuario ni servicios de almacenamiento en la nube para
-          almacenar la información de los medicamentos o las dosis.
-        </p>
-      )
-    },
+      {
+        titulo: 'Almacenamiento de datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Toda la información introducida por el usuario se almacena
+            localmente en el dispositivo. Pastillero+ no utiliza servidores,
+            cuentas de usuario ni servicios de almacenamiento en la nube para
+            almacenar la información de los medicamentos o las dosis.
+          </p>
+        )
+      },
 
-    {
-      titulo: 'Notificaciones',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          Pastillero+ puede utilizar notificaciones locales del dispositivo
-          para recordar al usuario las dosis programadas. Estas notificaciones
-          se generan y gestionan localmente en el dispositivo y no requieren
-          enviar los datos de las dosis a un servidor externo.
-        </p>
-      )
-    },
+      {
+        titulo: 'Notificaciones',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Pastillero+ puede utilizar notificaciones locales del dispositivo
+            para recordar al usuario las dosis programadas. Estas notificaciones
+            se generan y gestionan localmente en el dispositivo y no requieren
+            enviar los datos de las dosis a un servidor externo.
+          </p>
+        )
+      },
 
-    {
-      titulo: 'Servicios de terceros',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          Pastillero+ no utiliza servicios de terceros para recopilar,
-          almacenar o procesar los datos personales o la información de
-          medicamentos introducida por el usuario.
-        </p>
-      )
-    },
+      {
+        titulo: 'Servicios de terceros',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Pastillero+ no utiliza servicios de terceros para recopilar,
+            almacenar o procesar los datos personales o la información de
+            medicamentos introducida por el usuario.
+          </p>
+        )
+      },
 
-    {
-      titulo: 'Publicidad y seguimiento',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          Pastillero+ no vende datos personales ni utiliza la información del
-          usuario para crear perfiles publicitarios. La aplicación no requiere
-          una cuenta y no utiliza los datos introducidos para realizar
-          seguimiento del usuario.
-        </p>
-      )
-    },
+      {
+        titulo: 'Publicidad y seguimiento',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Pastillero+ no vende datos personales ni utiliza la información del
+            usuario para crear perfiles publicitarios. La aplicación no requiere
+            una cuenta y no utiliza los datos introducidos para realizar
+            seguimiento del usuario.
+          </p>
+        )
+      },
 
-    {
-      titulo: 'Conservación y eliminación',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          Los datos se conservan localmente en el dispositivo mientras la
-          aplicación los necesite. El usuario puede eliminar la información
-          almacenada desde las propias funcionalidades de la aplicación o
-          eliminando los datos de la aplicación del dispositivo.
-        </p>
-      )
-    },
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Los datos se conservan localmente en el dispositivo mientras la
+            aplicación los necesite. El usuario puede eliminar la información
+            almacenada desde las propias funcionalidades de la aplicación o
+            eliminando los datos de la aplicación del dispositivo.
+          </p>
+        )
+      },
 
-    {
-      titulo: 'Tus derechos',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          Como Pastillero+ no recopila ni almacena datos personales en
-          servidores, no mantiene un perfil personal del usuario. Si tienes
-          alguna consulta relacionada con la privacidad de la aplicación,
-          puedes contactar con nosotros escribiendo a{' '}
-          <span className="font-medium text-slate-900">
-            alejandro.sanjim2000@gmail.com
-          </span>
-          .
-        </p>
-      )
-    },
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Como Pastillero+ no recopila ni almacena datos personales en
+            servidores, no mantiene un perfil personal del usuario. Si tienes
+            alguna consulta relacionada con la privacidad de la aplicación,
+            puedes contactar con nosotros escribiendo a{' '}
+            <span className="font-medium text-slate-900">
+              alejandro.sanjim2000@gmail.com
+            </span>
+            .
+          </p>
+        )
+      },
 
-    {
-      titulo: 'Cambios en esta política',
-      contenido: (
-        <p className="m-0 leading-7 text-slate-600">
-          Podemos actualizar esta política de privacidad ocasionalmente para
-          reflejar cambios en la aplicación o en los requisitos legales
-          aplicables. Cualquier modificación se reflejará en esta misma página
-          indicando la fecha de actualización correspondiente.
-        </p>
-      )
-    }
-  ]
-},
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política de privacidad ocasionalmente para
+            reflejar cambios en la aplicación o en los requisitos legales
+            aplicables. Cualquier modificación se reflejará en esta misma página
+            indicando la fecha de actualización correspondiente.
+          </p>
+        )
+      }
+    ]
+  },
+
   scanvault: {
     nombre: 'ScanVault',
-fechaActualizacion: '9 de octubre de 2026',
+    fechaActualizacion: '9 de octubre de 2026',
 
-secciones: [
-  {
-    titulo: 'Datos que recogemos',
-    contenido: (
-      <ul className="space-y-5">
-        <li className="flex gap-4">
-          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
-            01
-          </div>
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <ul className="space-y-5">
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                01
+              </div>
 
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos de cuenta.
+                </span>{' '}
+                Correo electrónico e identificadores de usuario gestionados a
+                través de Firebase Authentication, necesarios para identificar y
+                gestionar tu cuenta.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                02
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Documentos e imágenes escaneados.
+                </span>{' '}
+                Las imágenes, archivos y documentos que decidas importar,
+                capturar o guardar mediante la aplicación. Si la funcionalidad
+                de sincronización está habilitada, estos archivos podrán
+                almacenarse en Firebase Storage y los metadatos asociados en
+                Firebase Firestore.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                03
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Texto extraído de los documentos.
+                </span>{' '}
+                La aplicación puede utilizar reconocimiento óptico de caracteres
+                (OCR) para extraer texto de las imágenes y facilitar la búsqueda
+                o consulta de su contenido. El texto procesado dependerá de las
+                funciones que utilices.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                04
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos técnicos básicos.
+                </span>{' '}
+                Identificadores técnicos e información necesaria para el
+                funcionamiento, la seguridad y el diagnóstico de errores del
+                servicio, cuando corresponda.
+              </p>
+            </li>
+          </ul>
+        )
+      },
+
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            <span className="font-semibold text-slate-900">
-              Datos de cuenta.
-            </span>{' '}
-            Correo electrónico e identificadores de usuario gestionados a
-            través de Firebase Authentication, necesarios para identificar
-            y gestionar tu cuenta.
+            Los datos se utilizan para proporcionar las funciones de ScanVault:
+            gestionar tu cuenta, capturar e importar documentos, procesar
+            imágenes mediante OCR, organizar y consultar archivos y, cuando esté
+            disponible, sincronizar documentos entre dispositivos. No utilizamos
+            el contenido de tus documentos con fines publicitarios.
           </p>
-        </li>
+        )
+      },
 
-        <li className="flex gap-4">
-          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
-            02
-          </div>
-
+      {
+        titulo: 'Con quién compartimos los datos',
+        contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            <span className="font-semibold text-slate-900">
-              Documentos e imágenes escaneados.
-            </span>{' '}
-            Las imágenes, archivos y documentos que decidas importar,
-            capturar o guardar mediante la aplicación. Si la funcionalidad
-            de sincronización está habilitada, estos archivos podrán
-            almacenarse en Firebase Storage y los metadatos asociados en
-            Firebase Firestore.
+            Utilizamos servicios de Firebase (Google) para las funciones de
+            autenticación, base de datos y almacenamiento en la nube que
+            correspondan. La aplicación también puede utilizar bibliotecas de
+            reconocimiento de texto para procesar documentos. No vendemos tus
+            datos personales ni compartimos tus documentos con terceros con
+            fines publicitarios.
           </p>
-        </li>
+        )
+      },
 
-        <li className="flex gap-4">
-          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
-            03
-          </div>
-
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            <span className="font-semibold text-slate-900">
-              Texto extraído de los documentos.
-            </span>{' '}
-            La aplicación puede utilizar reconocimiento óptico de
-            caracteres (OCR) para extraer texto de las imágenes y facilitar
-            la búsqueda o consulta de su contenido. El texto procesado
-            dependerá de las funciones que utilices.
+            Conservamos los datos de tu cuenta y los archivos almacenados en
+            nuestros servicios mientras sean necesarios para prestar las
+            funcionalidades solicitadas. Puedes solicitar la eliminación de tu
+            cuenta y de los datos asociados contactando con nosotros. Los
+            archivos guardados exclusivamente en tu dispositivo pueden requerir
+            su eliminación desde la propia aplicación o desde el dispositivo.
           </p>
-        </li>
+        )
+      },
 
-        <li className="flex gap-4">
-          <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
-            04
-          </div>
-
+      {
+        titulo: 'Permisos del dispositivo',
+        contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            <span className="font-semibold text-slate-900">
-              Datos técnicos básicos.
-            </span>{' '}
-            Identificadores técnicos e información necesaria para el
-            funcionamiento, la seguridad y el diagnóstico de errores del
-            servicio, cuando corresponda.
+            ScanVault puede solicitar acceso a la cámara para capturar
+            documentos y a las fotografías o archivos del dispositivo para
+            importar documentos que selecciones. Estos permisos se utilizan para
+            las funciones solicitadas por el usuario.
           </p>
-        </li>
-      </ul>
-    )
+        )
+      },
+
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Puedes solicitar acceso, rectificación o eliminación de tus datos
+            personales, así como ejercer los demás derechos reconocidos por la
+            normativa aplicable, escribiendo a alejandro.sanjim2000@gmail.com.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política ocasionalmente. Cualquier cambio se
+            reflejará en esta misma página con la fecha de actualización
+            correspondiente.
+          </p>
+        )
+      }
+    ]
   },
-
-  {
-    titulo: 'Cómo usamos los datos',
-    contenido: (
-      <p className="m-0 leading-7 text-slate-600">
-        Los datos se utilizan para proporcionar las funciones de ScanVault:
-        gestionar tu cuenta, capturar e importar documentos, procesar
-        imágenes mediante OCR, organizar y consultar archivos y, cuando
-        esté disponible, sincronizar documentos entre dispositivos. No
-        utilizamos el contenido de tus documentos con fines publicitarios.
-      </p>
-    )
-  },
-
-  {
-    titulo: 'Con quién compartimos los datos',
-    contenido: (
-      <p className="m-0 leading-7 text-slate-600">
-        Utilizamos servicios de Firebase (Google) para las funciones de
-        autenticación, base de datos y almacenamiento en la nube que
-        correspondan. La aplicación también puede utilizar bibliotecas de
-        reconocimiento de texto para procesar documentos. No vendemos tus
-        datos personales ni compartimos tus documentos con terceros con
-        fines publicitarios.
-      </p>
-    )
-  },
-
-  {
-    titulo: 'Conservación y eliminación',
-    contenido: (
-      <p className="m-0 leading-7 text-slate-600">
-        Conservamos los datos de tu cuenta y los archivos almacenados en
-        nuestros servicios mientras sean necesarios para prestar las
-        funcionalidades solicitadas. Puedes solicitar la eliminación de
-        tu cuenta y de los datos asociados contactando con nosotros. Los
-        archivos guardados exclusivamente en tu dispositivo pueden
-        requerir su eliminación desde la propia aplicación o desde el
-        dispositivo.
-      </p>
-    )
-  },
-
-  {
-    titulo: 'Permisos del dispositivo',
-    contenido: (
-      <p className="m-0 leading-7 text-slate-600">
-        ScanVault puede solicitar acceso a la cámara para capturar
-        documentos y a las fotografías o archivos del dispositivo para
-        importar documentos que selecciones. Estos permisos se utilizan
-        para las funciones solicitadas por el usuario.
-      </p>
-    )
-  },
-
-  {
-    titulo: 'Tus derechos',
-    contenido: (
-      <p className="m-0 leading-7 text-slate-600">
-        Puedes solicitar acceso, rectificación o eliminación de tus datos
-        personales, así como ejercer los demás derechos reconocidos por la
-        normativa aplicable, escribiendo a
-        alejandro.sanjim2000@gmail.com.
-      </p>
-    )
-  },
-
-  {
-    titulo: 'Cambios en esta política',
-    contenido: (
-      <p className="m-0 leading-7 text-slate-600">
-        Podemos actualizar esta política ocasionalmente. Cualquier cambio
-        se reflejará en esta misma página con la fecha de actualización
-        correspondiente.
-      </p>
-    )
-  }
-]
-
-},
-
 
   ludus: {
     nombre: 'Ludus',
@@ -966,9 +963,8 @@ secciones: [
                 <span className="font-semibold text-slate-900">
                   Datos de cuenta.
                 </span>{' '}
-                Correo electrónico, nombre de usuario e información básica
-                del perfil necesarios para crear y gestionar tu cuenta en
-                Ludus.
+                Correo electrónico, nombre de usuario e información básica del
+                perfil necesarios para crear y gestionar tu cuenta en Ludus.
               </p>
             </li>
 
@@ -980,10 +976,10 @@ secciones: [
                 <span className="font-semibold text-slate-900">
                   Contenido generado por el usuario.
                 </span>{' '}
-                Publicaciones, comentarios, listas de videojuegos, tier lists
-                y otra información que decidas compartir en la aplicación.
-                También se incluye el contenido que publiques o guardes en
-                tu perfil, como tus juegos deseados, completados o abandonados.
+                Publicaciones, comentarios, listas de videojuegos, tier lists y
+                otra información que decidas compartir en la aplicación. También
+                se incluye el contenido que publiques o guardes en tu perfil,
+                como tus juegos deseados, completados o abandonados.
               </p>
             </li>
 
@@ -995,9 +991,9 @@ secciones: [
                 <span className="font-semibold text-slate-900">
                   Datos de interacción social.
                 </span>{' '}
-                Información relacionada con los usuarios a los que sigues,
-                los seguidores de tu perfil, los me gusta y las interacciones
-                que realices con las publicaciones de otros usuarios.
+                Información relacionada con los usuarios a los que sigues, los
+                seguidores de tu perfil, los me gusta y las interacciones que
+                realices con las publicaciones de otros usuarios.
               </p>
             </li>
 
@@ -1009,9 +1005,9 @@ secciones: [
                 <span className="font-semibold text-slate-900">
                   Datos técnicos.
                 </span>{' '}
-                Identificadores técnicos e información básica de uso
-                necesarios para el funcionamiento, la seguridad y el
-                diagnóstico de errores de la aplicación, cuando corresponda.
+                Identificadores técnicos e información básica de uso necesarios
+                para el funcionamiento, la seguridad y el diagnóstico de errores
+                de la aplicación, cuando corresponda.
               </p>
             </li>
           </ul>
@@ -1035,13 +1031,12 @@ secciones: [
         titulo: 'Contenido público y visibilidad',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            Ludus permite compartir contenido relacionado con videojuegos
-            e interactuar con otros usuarios. Las publicaciones, comentarios,
-            tier lists y demás información que decidas publicar podrán ser
-            visibles para otros usuarios de la aplicación, según las
-            funcionalidades y opciones de visibilidad disponibles. Te
-            recomendamos no compartir información personal que no quieras
-            hacer pública.
+            Ludus permite compartir contenido relacionado con videojuegos e
+            interactuar con otros usuarios. Las publicaciones, comentarios, tier
+            lists y demás información que decidas publicar podrán ser visibles
+            para otros usuarios de la aplicación, según las funcionalidades y
+            opciones de visibilidad disponibles. Te recomendamos no compartir
+            información personal que no quieras hacer pública.
           </p>
         )
       },
@@ -1052,9 +1047,9 @@ secciones: [
           <p className="m-0 leading-7 text-slate-600">
             Ludus puede utilizar servicios de terceros para proporcionar
             funcionalidades como la autenticación, el almacenamiento de
-            información y la sincronización de datos. Estos proveedores
-            pueden procesar la información necesaria para prestar dichos
-            servicios de acuerdo con sus propias políticas de privacidad.
+            información y la sincronización de datos. Estos proveedores pueden
+            procesar la información necesaria para prestar dichos servicios de
+            acuerdo con sus propias políticas de privacidad.
           </p>
         )
       },
@@ -1063,12 +1058,12 @@ secciones: [
         titulo: 'Conservación y eliminación',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            Conservamos los datos asociados a tu cuenta mientras sean
-            necesarios para proporcionar las funcionalidades de Ludus.
-            Puedes solicitar la eliminación de tu cuenta y de los datos
-            personales asociados contactando con nosotros. Determinados
-            contenidos o interacciones podrían dejar de estar disponibles
-            al eliminarse la cuenta o el contenido correspondiente.
+            Conservamos los datos asociados a tu cuenta mientras sean necesarios
+            para proporcionar las funcionalidades de Ludus. Puedes solicitar la
+            eliminación de tu cuenta y de los datos personales asociados
+            contactando con nosotros. Determinados contenidos o interacciones
+            podrían dejar de estar disponibles al eliminarse la cuenta o el
+            contenido correspondiente.
           </p>
         )
       },
@@ -1077,12 +1072,13 @@ secciones: [
         titulo: 'Tus derechos',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            Puedes solicitar acceso, rectificación o eliminación de tus
-            datos personales, así como ejercer los demás derechos reconocidos
-            por la normativa aplicable, escribiendo a{' '}
+            Puedes solicitar acceso, rectificación o eliminación de tus datos
+            personales, así como ejercer los demás derechos reconocidos por la
+            normativa aplicable, escribiendo a{' '}
             <span className="font-medium text-slate-900">
               alejandro.sanjim2000@gmail.com
-            </span>.
+            </span>
+            .
           </p>
         )
       },
@@ -1091,10 +1087,10 @@ secciones: [
         titulo: 'Publicidad y seguimiento',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            Los datos de Ludus se utilizan para proporcionar las
-            funcionalidades de la aplicación. El uso de datos con fines
-            publicitarios o de seguimiento dependerá de los servicios
-            integrados en la aplicación y de su configuración.
+            Los datos de Ludus se utilizan para proporcionar las funcionalidades
+            de la aplicación. El uso de datos con fines publicitarios o de
+            seguimiento dependerá de los servicios integrados en la aplicación y
+            de su configuración.
           </p>
         )
       },
@@ -1103,16 +1099,136 @@ secciones: [
         titulo: 'Cambios en esta política',
         contenido: (
           <p className="m-0 leading-7 text-slate-600">
-            Podemos actualizar esta política de privacidad para reflejar
-            cambios en Ludus, en los servicios utilizados o en los requisitos
-            legales aplicables. Cualquier modificación se reflejará en esta
-            misma página indicando la fecha de actualización correspondiente.
+            Podemos actualizar esta política de privacidad para reflejar cambios
+            en Ludus, en los servicios utilizados o en los requisitos legales
+            aplicables. Cualquier modificación se reflejará en esta misma página
+            indicando la fecha de actualización correspondiente.
           </p>
         )
       }
     ]
   },
 
+  bajocontrol: {
+    nombre: 'BajoControl',
+    fechaActualizacion: '5 de noviembre de 2026',
+
+    secciones: [
+      {
+        titulo: 'Datos que recogemos',
+        contenido: (
+          <ul className="space-y-5">
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg  text-sm">
+                01
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Credenciales de proveedores de servicios.
+                </span>{' '}
+                Todas las credenciales (API keys, tokens, certificados .p8) se
+                introducen y almacenan directamente en este dispositivo. No se
+                suben a ningún servidor ni se sincronizan mediante la nube.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                02
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Configuración de la aplicación.
+                </span>{' '}
+                Preferencias personales, configuraciones por plataforma (App
+                Store, Google Play, RevenueCat, AdMob, Firebase, GitHub) y
+                opciones locales guardadas en el almacenamiento interno del
+                dispositivo.
+              </p>
+            </li>
+
+            <li className="flex gap-4">
+              <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-sm">
+                03
+              </div>
+
+              <p className="m-0 leading-7 text-slate-600">
+                <span className="font-semibold text-slate-900">
+                  Datos técnicos básicos.
+                </span>{' '}
+                Identificadores de versión de la app y configuraciones locales
+                necesarias para el funcionamiento. Todo procesado exclusivamente
+                en este dispositivo.
+              </p>
+            </li>
+          </ul>
+        )
+      },
+
+      {
+        titulo: 'Cómo usamos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Todo el procesamiento de tus credenciales y configuraciones ocurre
+            exclusivamente en este dispositivo. No enviamos tus datos a nuestros
+            servidores, no los respaldamos en la nube y no los utilizamos para
+            ningún otro fin que no sea la funcionalidad inmediata de la app.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Con quién compartimos los datos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            No compartimos tus datos con nadie. No integramos con Firebase
+            Authentication ni ningún otro servicio de terceros para almacenar tu
+            información. Tus credenciales permanecen aisladas en este
+            dispositivo.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Conservación y eliminación',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Tus datos se conservan en este dispositivo mientras uses la app. En
+            cualquier momento, desde el menú de Ajustes, puedes borrar todas las
+            credenciales y configuraciones guardadas. Las credenciales
+            eliminadas se pierden permanentemente y no se pueden recuperar.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Tus derechos',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Como tus datos están totalmente en tu dispositivo, tienes el control
+            completo. Puedes borrar toda tu configuración en cualquier momento
+            desde la propia app. Si deseas eliminar completamente tu cuenta,
+            puedes desinstalar la aplicación, ya que no almacenamos nada en
+            nuestros servidores.
+          </p>
+        )
+      },
+
+      {
+        titulo: 'Cambios en esta política',
+        contenido: (
+          <p className="m-0 leading-7 text-slate-600">
+            Podemos actualizar esta política ocasionalmente. Cualquier cambio se
+            reflejará en esta misma página. Dado que el modelo de BajoControl es
+            todo en el dispositivo, cualquier actualización seguirá principio de
+            privacidad local.
+          </p>
+        )
+      }
+    ]
+  }
 
   // Ejemplo de cómo añadir una futura app:
   //
